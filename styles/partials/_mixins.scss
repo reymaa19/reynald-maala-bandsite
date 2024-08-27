@@ -1,0 +1,25 @@
+@use './variables' as *;
+@use './functions' as *;
+
+@mixin flex-container($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin reset-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+@mixin apply-color($property, $palette, $color) {
+  #{$property}: get-color($palette, $color);
+}
+
+@mixin apply-mobile-typography($element) {
+  font-size: get-mobile-typography($element, 'font-size');
+  line-height: get-mobile-typography($element, 'line-height');
+  font-weight: get-mobile-typography($element, 'font-weight');
+}

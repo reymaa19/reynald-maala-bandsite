@@ -1,0 +1,68 @@
+@font-face {
+  font-family: "Avenir Next LT Pro";
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Avenir Next LT Pro";
+  src: url("../../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Avenir Next LT Pro";
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2");
+  font-weight: bold;
+}
+html {
+  font-size: 100%;
+  font-family: "Avenir Next LT Pro", Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.nav {
+  background-color: #323232;
+  padding-top: 1.25rem;
+}
+.nav__logo {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  display: block;
+  margin: 0 auto;
+}
+.nav__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.nav__item {
+  color: #e1e1e1;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  width: 100%;
+}
+.nav__item--active {
+  border-bottom: 0.1875rem solid #ffffff;
+  color: #ffffff;
+  font-weight: 700;
+}
+.nav__item:hover {
+  border-bottom: 0.1875rem solid #ffffff;
+  color: #ffffff;
+  font-weight: 700;
+}
+.nav__link {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}

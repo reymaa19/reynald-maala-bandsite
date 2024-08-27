@@ -1,0 +1,43 @@
+@use './partials/' as *;
+
+.nav {
+  background-color: get-color(primary, black);
+  padding-top: 1.25rem;
+
+  &__logo {
+    @include apply-mobile-typography(page-header);
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__list {
+    @include flex-container($justify: space-around);
+    @include reset-list;
+  }
+
+  &__item {
+    color: get-color(secondary, silver);
+    padding: 0.5rem 1rem;
+    text-align: center;
+    width: 100%;
+
+    &--active {
+      border-bottom: 0.1875rem solid get-color(primary, white);
+      color: get-color(primary, white);
+      font-weight: $font-weight-bold;
+    }
+
+    &:hover {
+      border-bottom: 0.1875rem solid get-color(primary, white);
+      color: get-color(primary, white);
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  &__link {
+    @include apply-mobile-typography(subheader);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+}
