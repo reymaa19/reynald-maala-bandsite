@@ -54,7 +54,7 @@
 }
 
 .about {
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 1rem 0 1rem;
 
   &__title {
     @include apply-mobile-typography(section-header);
@@ -92,7 +92,27 @@
   &__details {
     @include apply-mobile-typography(body);
     color: get-color(primary, gray);
-    padding: 0 0.6375rem 1rem 0;
+    padding-bottom: 1rem;
     margin: 0;
   }
+}
+
+.photos {
+  padding: 1.5rem 1rem 0rem 1rem;
+  background-color: get-color(secondary, white);
+
+  &__title {
+    @include apply-mobile-typography(section-header);
+    color: get-color(primary, black);
+    margin: 0;
+    padding-bottom: 1rem;
+  }
+}
+
+.photos-gallery {
+}
+
+.photo {
+  width: 100%;
+  padding-bottom: 0.5rem;
 }
