@@ -1,6 +1,6 @@
 // Font weights
 $font-weight-regular: 400;
-$font-weight-semibold: 600;
+$font-weight-demi: 600;
 $font-weight-bold: 700;
 
 // Mobile typography
@@ -18,7 +18,7 @@ $mobile-typography: (
   subheader: (
     font-size: 0.875rem,
     line-height: 1.375rem,
-    font-weight: $font-weight-semibold,
+    font-weight: $font-weight-demi,
   ),
   body: (
     font-size: 0.8125rem,

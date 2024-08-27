@@ -2,7 +2,7 @@
 
 .nav {
   background-color: get-color(primary, black);
-  padding-top: 1.25rem;
+  padding-top: 1rem;
 
   &__logo {
     @include apply-mobile-typography(page-header);
@@ -17,7 +17,7 @@
 
   &__item {
     color: get-color(secondary, silver);
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1rem 0.5rem 1rem;
     text-align: center;
     width: 100%;
 
@@ -39,5 +39,60 @@
     text-decoration: none;
     color: inherit;
     display: block;
+  }
+}
+
+.hero {
+  @include hero-image('/assets/images/hero-bio.jpg');
+
+  &__title {
+    @include apply-mobile-typography(page-header);
+    color: get-color(primary, white);
+    margin: 0;
+    padding: 5rem 1rem;
+  }
+}
+
+.about {
+  padding: 1.5rem 1rem;
+
+  &__title {
+    @include apply-mobile-typography(section-header);
+    padding-bottom: 1rem;
+    margin: 0;
+  }
+
+  &__image {
+    width: 100%;
+    padding-bottom: 1rem;
+  }
+
+  &__quote {
+    @include apply-mobile-typography(subheader);
+    color: get-color(primary, black);
+    margin: 0;
+    padding-bottom: 0.5rem;
+  }
+
+  &__quotee {
+    @include apply-mobile-typography(subheader);
+    color: get-color(primary, black);
+    padding-bottom: 1rem;
+    margin: 0;
+  }
+
+  &__subtitle {
+    @include apply-mobile-typography(body);
+    font-weight: $font-weight-demi;
+    color: get-color(secondary, black);
+    padding-bottom: 0.5rem;
+    margin: 0;
+  }
+
+  &__details {
+    @include apply-mobile-typography(body);
+    color: get-color(primary, gray);
+    padding: 0 0.6375rem 1rem 0;
+    margin: 0;
   }
 }

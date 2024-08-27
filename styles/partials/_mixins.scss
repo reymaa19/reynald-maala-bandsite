@@ -14,6 +14,13 @@
   list-style-type: none;
 }
 
+@mixin hero-image($url) {
+  background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
+    url($url);
+  background-size: cover;
+  background-position: center;
+}
+
 @mixin apply-color($property, $palette, $color) {
   #{$property}: get-color($palette, $color);
 }
