@@ -1,17 +1,17 @@
 @font-face {
   font-family: "Avenir Next LT Pro";
-  src: url("../../assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2");
-  font-weight: normal;
+  src: url("./assets/fonts/AvenirNextLTPro-Regular.otf") format("otf"), url("./assets/fonts/AvenirNextLTPro.ttf") format("ttf");
+  font-weight: 400;
 }
 @font-face {
   font-family: "Avenir Next LT Pro";
-  src: url("../../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2");
+  src: url("./assets/fonts/AvenirNextLTPro-Demi.otf") format("otf"), url("./assets/fonts/AvenirNextLTProDemi.ttf") format("ttf");
   font-weight: 600;
 }
 @font-face {
   font-family: "Avenir Next LT Pro";
-  src: url("../../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2");
-  font-weight: bold;
+  src: url("./assets/fonts/AvenirNextLTPro-Bold.otf") format("otf"), url("./assets/fonts/AvenirNextLTProBold.ttf") format("ttf");
+  font-weight: 700;
 }
 html {
   font-size: 100%;
@@ -65,7 +65,7 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("/assets/images/hero-bio.jpg");
+  background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/images/hero-bio.jpg");
   background-position: center;
   background-size: cover;
   padding-left: 1rem;
