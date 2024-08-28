@@ -1,52 +1,68 @@
+// Breakpoints
+$breakpoint-large: 1280px;
+$breakpoint-medium: 768px;
+
 // Font weights
 $font-weight-regular: 400;
 $font-weight-demi: 600;
 $font-weight-bold: 700;
 
-// Mobile typography
-$mobile-typography: (
-  page-header: (
-    font-size: 1.5rem,
-    line-height: 2rem,
-    font-weight: $font-weight-bold,
-  ),
-  section-header: (
-    font-size: 1.5rem,
-    line-height: 2rem,
-    font-weight: $font-weight-bold,
-  ),
-  subheader: (
-    font-size: 0.875rem,
-    line-height: 1.375rem,
-    font-weight: $font-weight-demi,
-  ),
-  body: (
-    font-size: 0.8125rem,
-    line-height: 1.125rem,
-    font-weight: $font-weight-regular,
-  ),
-  footer: (
-    font-size: 0.8125rem,
-    line-height: 1.125rem,
-    font-weight: $font-weight-regular,
-  ),
-  labels-and-buttons: (
-    font-size: 0.625rem,
-    line-height: 1.25rem,
-    font-weight: $font-weight-bold,
-  ),
-);
+// Mobile Text Styles
+$mobile-fs-page-header: 1.5rem;
+$mobile-fw-page-header: $font-weight-bold;
+$mobile-lh-page-header: 2rem;
 
-// Color palette
-$color-palette: (
-  primary: (
-    black: #323232,
-    silver: #afafaf,
-    white: #ffffff,
-  ),
-  secondary: (
-    black: #000000,
-    silver: #e1e1e1,
-    white: #fafafa,
-  ),
-);
+$mobile-fs-section-header: 1.5rem;
+$mobile-fw-section-header: $font-weight-bold;
+$mobile-lh-section-header: 2rem;
+
+$mobile-fs-subheader: 0.875rem;
+$mobile-fw-subheader: $font-weight-demi;
+$mobile-lh-subheader: 1.375rem;
+
+$mobile-fs-body: 0.8125rem;
+$mobile-fw-body: $font-weight-regular;
+$mobile-lh-body: 1.125rem;
+
+$mobile-fs-footer: 0.8125rem;
+$mobile-fw-footer: $font-weight-regular;
+$mobile-lh-footer: 1.125rem;
+
+$mobile-fs-labels-and-buttons: 0.625rem;
+$mobile-fw-labels-and-buttons: $font-weight-bold;
+$mobile-lh-labels-and-buttons: 1.25rem;
+
+// Desktop & Tablet Text Styles
+$fs-page-header: 3.75rem;
+$fw-page-header: $font-weight-bold;
+$lh-page-header: 4.25rem;
+
+$fs-section-header: 2.25rem;
+$fw-section-header: $font-weight-bold;
+$lh-section-header: 2.75rem;
+
+$fs-subheader: 1.5rem;
+$fw-subheader: $font-weight-demi;
+$lh-subheader: 2rem;
+
+$fs-body: 0.875rem;
+$fw-body: $font-weight-regular;
+$lh-body: 1.375rem;
+
+$fs-footer: 0.875rem;
+$fw-footer: $font-weight-regular;
+$lh-footer: 1.25rem;
+
+$fs-labels-and-buttons: 0.75rem;
+$fw-labels-and-buttons: $font-weight-bold;
+$lh-labels-and-buttons: 1.25rem;
+
+// Primary Colors
+$primary-color-black: #323232;
+$primary-color-gray: #afafaf;
+$primary-color-white: #ffffff;
+
+// Secondary Colors
+$secondary-color-black: #000000;
+$secondary-color-gray: #e1e1e1;
+$secondary-color-white: #fafafa;

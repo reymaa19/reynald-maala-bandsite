@@ -27,9 +27,6 @@ body {
   padding-top: 1rem;
 }
 .nav__logo {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 700;
   display: block;
   margin: 0 auto;
 }
@@ -43,104 +40,107 @@ body {
   margin: 0;
 }
 .nav__item {
-  color: #e1e1e1;
   padding: 0.75rem 1rem 0.5rem 1rem;
+  color: #e1e1e1;
   text-align: center;
   width: 100%;
 }
-.nav__item--active {
+.nav__item--active, .nav__item:hover {
   border-bottom: 0.1875rem solid #ffffff;
+  font-weight: 600;
   color: #ffffff;
-  font-weight: 700;
-}
-.nav__item:hover {
-  border-bottom: 0.1875rem solid #ffffff;
-  color: #ffffff;
-  font-weight: 700;
 }
 .nav__link {
-  font-size: 0.875rem;
-  line-height: 1.375rem;
-  font-weight: 600;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.125rem;
   text-decoration: none;
+  font-weight: inherit;
   color: inherit;
   display: block;
 }
 
 .hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
   background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("/assets/images/hero-bio.jpg");
   background-position: center;
   background-size: cover;
+  padding-left: 1rem;
+  min-height: 12rem;
 }
 .hero__title {
   font-size: 1.5rem;
-  line-height: 2rem;
   font-weight: 700;
-  color: #ffffff;
+  line-height: 2rem;
   font-weight: 600;
-  padding: 5rem 1rem;
+  color: #ffffff;
   margin: 0;
 }
 
 .about {
-  padding: 1.5rem 1rem 0 1rem;
+  padding: 1rem 1rem 0 1rem;
 }
 .about__title {
   font-size: 1.5rem;
-  line-height: 2rem;
   font-weight: 700;
-  color: #323232;
+  line-height: 2rem;
   font-weight: 600;
-  padding-bottom: 1rem;
+  color: #323232;
+  padding-bottom: 0.5rem;
   margin: 0;
 }
 .about__image {
   width: 100%;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
 }
 .about__quote {
-  font-size: 0.875rem;
-  line-height: 1.375rem;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.125rem;
   font-weight: 600;
   color: #323232;
   margin: 0;
   padding-bottom: 0.5rem;
 }
 .about__quotee {
-  font-size: 0.875rem;
-  line-height: 1.375rem;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.125rem;
   font-weight: 600;
   color: #323232;
-  padding-bottom: 1rem;
+  padding-bottom: 1.25rem;
   margin: 0;
 }
 .about__subtitle {
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
-  font-weight: 400;
+  font-size: 0.875rem;
   font-weight: 600;
+  line-height: 1.375rem;
   color: #000000;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.75rem;
   margin: 0;
 }
 .about__details {
   font-size: 0.8125rem;
-  line-height: 1.125rem;
   font-weight: 400;
+  line-height: 1.125rem;
+  color: #323232;
   padding-bottom: 1rem;
   margin: 0;
 }
 
 .photos {
   background-color: #fafafa;
-  padding: 1.5rem 1rem 0rem 1rem;
+  padding: 1rem 1rem 0rem 1rem;
 }
 .photos__title {
   font-size: 1.5rem;
-  line-height: 2rem;
   font-weight: 700;
+  line-height: 2rem;
   color: #323232;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
   margin: 0;
 }
 
@@ -155,10 +155,10 @@ body {
 }
 .footer__title {
   font-size: 1.5rem;
-  line-height: 2rem;
   font-weight: 700;
-  color: #ffffff;
+  line-height: 2rem;
   font-weight: 600;
+  color: #ffffff;
   padding-bottom: 1rem;
   margin: 0;
 }
@@ -179,23 +179,24 @@ body {
 }
 .footer__info-title {
   font-size: 0.8125rem;
-  line-height: 1.125rem;
   font-weight: 400;
-  color: #ffffff;
+  line-height: 1.125rem;
   font-weight: 600;
+  color: #ffffff;
   padding-bottom: 1rem;
   margin: 0;
 }
 .footer__address {
   font-size: 0.8125rem;
-  line-height: 1.125rem;
   font-weight: 400;
+  line-height: 1.125rem;
   color: #ffffff;
+  font-style: normal;
 }
 .footer__email {
   font-size: 0.8125rem;
-  line-height: 1.125rem;
   font-weight: 400;
+  line-height: 1.125rem;
   color: #ffffff;
   padding-bottom: 2rem;
   text-decoration: none;
@@ -204,8 +205,8 @@ body {
 }
 .footer__details {
   font-size: 0.8125rem;
-  line-height: 1.125rem;
   font-weight: 400;
+  line-height: 1.125rem;
   color: #ffffff;
   margin: 0;
 }
@@ -215,8 +216,8 @@ body {
 }
 .footer__copyrite {
   font-size: 0.8125rem;
-  line-height: 1.125rem;
   font-weight: 400;
+  line-height: 1.125rem;
   color: #ffffff;
   padding-bottom: 0.5rem;
   margin: 0;
