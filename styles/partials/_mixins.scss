@@ -25,10 +25,6 @@
   margin: 0;
 }
 
-@mixin hero-image($url) {
-
-}
-
 @mixin apply-mobile-typography($element) {
   @if $element == page-header {
     font-size: $mobile-fs-page-header;

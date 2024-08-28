@@ -43,6 +43,7 @@ body {
 @media (min-width: 768px) {
   .nav__logo {
     padding: 1.5rem 0 1.5rem 2.25rem;
+    margin: 0;
   }
 }
 .nav__list {
@@ -107,13 +108,13 @@ body {
   background-position: center;
   background-size: cover;
   padding-left: 1rem;
-  min-height: 10rem;
+  min-height: 12rem;
 }
 @media (min-width: 768px) {
   .hero {
     background-position: bottom;
     padding-left: 2.25rem;
-    min-height: 27.7rem;
+    min-height: 28rem;
   }
 }
 .hero__title {
@@ -134,7 +135,7 @@ body {
 }
 
 .about {
-  padding: 1.5rem 1rem 0 1rem;
+  padding: 1rem 1rem 0 1rem;
 }
 @media (min-width: 768px) {
   .about {
@@ -147,7 +148,7 @@ body {
   line-height: 2rem;
   font-weight: 600;
   color: #323232;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
   margin: 0;
 }
 @media (min-width: 768px) {
@@ -159,31 +160,32 @@ body {
 }
 .about__image {
   width: 100%;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
 }
 .about__quote {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.125rem;
   font-weight: 600;
-  line-height: 1.375rem;
   color: #323232;
   margin: 0;
   padding-bottom: 0.5rem;
 }
 .about__quotee {
-  font-size: 0.875rem;
-  font-weight: 600;
-  line-height: 1.375rem;
-  color: #323232;
-  padding-bottom: 1rem;
-  margin: 0;
-}
-.about__subtitle {
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.125rem;
   font-weight: 600;
+  color: #323232;
+  padding-bottom: 1.25rem;
+  margin: 0;
+}
+.about__subtitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.375rem;
   color: #000000;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.75rem;
   margin: 0;
 }
 .about__details {
@@ -197,14 +199,14 @@ body {
 
 .photos {
   background-color: #fafafa;
-  padding: 1.5rem 1rem 0rem 1rem;
+  padding: 1rem 1rem 0rem 1rem;
 }
 .photos__title {
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 2rem;
   color: #323232;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
   margin: 0;
 }
 
@@ -255,6 +257,7 @@ body {
   font-weight: 400;
   line-height: 1.125rem;
   color: #ffffff;
+  font-style: normal;
 }
 .footer__email {
   font-size: 0.8125rem;

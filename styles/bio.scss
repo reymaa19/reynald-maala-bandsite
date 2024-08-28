@@ -16,6 +16,7 @@
 
     @include tablet {
       padding: 1.5rem 0 1.5rem 2.25rem;
+      margin: 0;
     }
   }
 
@@ -70,12 +71,12 @@
   background-position: center;
   background-size: cover;
   padding-left: 1rem;
-  min-height: 10rem;
+  min-height: 12rem;
 
   @include tablet {
     background-position: bottom;
     padding-left: 2.25rem;
-    min-height: 27.7rem;
+    min-height: 28rem;
   }
 
   &__title {
@@ -92,7 +93,7 @@
 }
 
 .about {
-  padding: 1.5rem 1rem 0 1rem;
+  padding: 1rem 1rem 0 1rem;
 
   @include tablet {
     padding: 2.25rem 2.25rem 0 2.25rem;
@@ -102,7 +103,7 @@
     @include apply-mobile-typography(section-header);
     font-weight: $font-weight-demi;
     color: $primary-color-black;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
     margin: 0;
 
     @include tablet {
@@ -112,28 +113,29 @@
 
   &__image {
     width: 100%;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
   }
 
   &__quote {
-    @include apply-mobile-typography(subheader);
+    @include apply-mobile-typography(body);
+    font-weight: $font-weight-demi;
     color: $primary-color-black;
     margin: 0;
     padding-bottom: 0.5rem;
   }
 
   &__quotee {
-    @include apply-mobile-typography(subheader);
+    @include apply-mobile-typography(body);
+    font-weight: $font-weight-demi;
     color: $primary-color-black;
-    padding-bottom: 1rem;
+    padding-bottom: 1.25rem;
     margin: 0;
   }
 
   &__subtitle {
-    @include apply-mobile-typography(body);
-    font-weight: $font-weight-demi;
+    @include apply-mobile-typography(subheader);
     color: $secondary-color-black;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.75rem;
     margin: 0;
   }
 
@@ -147,12 +149,12 @@
 
 .photos {
   background-color: $secondary-color-white;
-  padding: 1.5rem 1rem 0rem 1rem;
+  padding: 1rem 1rem 0rem 1rem;
 
   &__title {
     @include apply-mobile-typography(section-header);
     color: $primary-color-black;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
     margin: 0;
   }
 }
@@ -196,6 +198,7 @@
   &__address {
     @include apply-mobile-typography(footer);
     color: $primary-color-white;
+    font-style: normal;
   }
 
   &__email {
