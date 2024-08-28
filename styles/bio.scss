@@ -1,68 +1,113 @@
 @use './partials/' as *;
 
 .nav {
-  background-color: get-color(primary, black);
+  background-color: $primary-color-black;
   padding-top: 1rem;
 
+  @include tablet {
+    @include flex-container;
+    padding: 0;
+    gap: 4.5rem;
+  }
+
   &__logo {
-    @include apply-mobile-typography(page-header);
     display: block;
     margin: 0 auto;
+
+    @include tablet {
+      padding: 1.5rem 0 1.5rem 2.25rem;
+    }
   }
 
   &__list {
     @include flex-container($justify: space-around);
     @include reset-list;
+
+    @include tablet {
+      gap: inherit;
+    }
   }
 
   &__item {
-    color: get-color(secondary, silver);
     padding: 0.75rem 1rem 0.5rem 1rem;
+    color: $secondary-color-gray;
     text-align: center;
     width: 100%;
 
-    &--active {
-      border-bottom: 0.1875rem solid get-color(primary, white);
-      color: get-color(primary, white);
-      font-weight: $font-weight-bold;
+    &--active,
+    &:hover {
+      border-bottom: 0.1875rem solid $primary-color-white;
+      font-weight: $font-weight-demi;
+      color: $primary-color-white;
     }
 
-    &:hover {
-      border-bottom: 0.1875rem solid get-color(primary, white);
-      color: get-color(primary, white);
-      font-weight: $font-weight-bold;
+    @include tablet {
+      @include flex-container($justify: center, $align: center);
+      padding: 0;
     }
   }
 
   &__link {
-    @include apply-mobile-typography(subheader);
+    @include apply-mobile-typography(body);
     text-decoration: none;
+    font-weight: inherit;
     color: inherit;
     display: block;
+
+    @include tablet {
+      @include apply-typography(body);
+
+      font-weight: inherit;
+      width: 100%;
+    }
   }
 }
 
 .hero {
-  @include hero-image('/assets/images/hero-bio.jpg');
+  @include flex-container($align: center);
+  background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
+    url('/assets/images/hero-bio.jpg');
+  background-position: center;
+  background-size: cover;
+  padding-left: 1rem;
+  min-height: 10rem;
+
+  @include tablet {
+    background-position: bottom;
+    padding-left: 2.25rem;
+    min-height: 27.7rem;
+  }
 
   &__title {
     @include apply-mobile-typography(page-header);
-    color: get-color(primary, white);
     font-weight: $font-weight-demi;
-    padding: 5rem 1rem;
+    color: $primary-color-white;
     margin: 0;
+
+    @include tablet {
+      @include apply-typography(page-header);
+      font-weight: $font-weight-demi;
+    }
   }
 }
 
 .about {
   padding: 1.5rem 1rem 0 1rem;
 
+  @include tablet {
+    padding: 2.25rem 2.25rem 0 2.25rem;
+  }
+
   &__title {
     @include apply-mobile-typography(section-header);
-    color: get-color(primary, black);
     font-weight: $font-weight-demi;
+    color: $primary-color-black;
     padding-bottom: 1rem;
     margin: 0;
+
+    @include tablet {
+      @include apply-typography(section-header);
+    }
   }
 
   &__image {
@@ -72,14 +117,14 @@
 
   &__quote {
     @include apply-mobile-typography(subheader);
-    color: get-color(primary, black);
+    color: $primary-color-black;
     margin: 0;
     padding-bottom: 0.5rem;
   }
 
   &__quotee {
     @include apply-mobile-typography(subheader);
-    color: get-color(primary, black);
+    color: $primary-color-black;
     padding-bottom: 1rem;
     margin: 0;
   }
@@ -87,26 +132,26 @@
   &__subtitle {
     @include apply-mobile-typography(body);
     font-weight: $font-weight-demi;
-    color: get-color(secondary, black);
+    color: $secondary-color-black;
     padding-bottom: 0.5rem;
     margin: 0;
   }
 
   &__details {
     @include apply-mobile-typography(body);
-    color: get-color(primary, gray);
+    color: $primary-color-black;
     padding-bottom: 1rem;
     margin: 0;
   }
 }
 
 .photos {
-  background-color: get-color(secondary, white);
+  background-color: $secondary-color-white;
   padding: 1.5rem 1rem 0rem 1rem;
 
   &__title {
     @include apply-mobile-typography(section-header);
-    color: get-color(primary, black);
+    color: $primary-color-black;
     padding-bottom: 1rem;
     margin: 0;
   }
@@ -118,13 +163,13 @@
 }
 
 .footer {
-  background-color: get-color(primary, black);
+  background-color: $primary-color-black;
   padding: 1rem 1rem;
 
   &__title {
     @include apply-mobile-typography(section-header);
-    color: get-color(primary, white);
     font-weight: $font-weight-demi;
+    color: $primary-color-white;
     padding-bottom: 1rem;
     margin: 0;
   }
@@ -142,20 +187,20 @@
 
   &__info-title {
     @include apply-mobile-typography(footer);
-    color: get-color(primary, white);
     font-weight: $font-weight-demi;
+    color: $primary-color-white;
     padding-bottom: 1rem;
     margin: 0;
   }
 
   &__address {
     @include apply-mobile-typography(footer);
-    color: get-color(primary, white);
+    color: $primary-color-white;
   }
 
   &__email {
     @include apply-mobile-typography(footer);
-    color: get-color(primary, white);
+    color: $primary-color-white;
     padding-bottom: 2rem;
     text-decoration: none;
     padding-top: 1rem;
@@ -164,7 +209,7 @@
 
   &__details {
     @include apply-mobile-typography(footer);
-    color: get-color(primary, white);
+    color: $primary-color-white;
     margin: 0;
   }
 
@@ -175,7 +220,7 @@
 
   &__copyrite {
     @include apply-mobile-typography(footer);
-    color: get-color(primary, white);
+    color: $primary-color-white;
     padding-bottom: 0.5rem;
     margin: 0;
   }
