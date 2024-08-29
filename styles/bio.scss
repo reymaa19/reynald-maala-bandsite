@@ -4,14 +4,29 @@
   background-color: $primary-color-black;
   padding-top: 1rem;
 
+  @include tablet {
+    @include flex-container;
+    padding: 0;
+    gap: 4.5rem;
+  }
+
   &__logo {
     display: block;
     margin: 0 auto;
+
+    @include tablet {
+      padding: 1.5rem 0 1.5rem 2.25rem;
+      margin: 0;
+    }
   }
 
   &__list {
     @include flex-container($justify: space-around);
     @include reset-list;
+
+    @include tablet {
+      gap: inherit;
+    }
   }
 
   &__item {
@@ -26,6 +41,11 @@
       font-weight: $font-weight-demi;
       color: $primary-color-white;
     }
+
+    @include tablet {
+      @include flex-container($justify: center, $align: center);
+      padding: 0;
+    }
   }
 
   &__link {
@@ -34,6 +54,13 @@
     font-weight: inherit;
     color: inherit;
     display: block;
+
+    @include tablet {
+      @include apply-typography(body);
+
+      font-weight: inherit;
+      width: 100%;
+    }
   }
 }
 
@@ -46,23 +73,38 @@
   padding-left: 1rem;
   min-height: 12rem;
 
+  @include tablet {
+    background-position: bottom;
+    padding-left: 2.25rem;
+    min-height: 29rem;
+  }
+
   &__title {
     @include apply-mobile-typography(page-header);
-    font-weight: $font-weight-demi;
     color: $primary-color-white;
     margin: 0;
+
+    @include tablet {
+      @include apply-typography(page-header);
+    }
   }
 }
 
 .about {
   padding: 1rem 1rem 0 1rem;
+  @include tablet {
+    padding: 2.25rem 2.25rem 0 2.25rem;
+  }
 
   &__title {
     @include apply-mobile-typography(section-header);
-    font-weight: $font-weight-demi;
     color: $primary-color-black;
     padding-bottom: 0.5rem;
     margin: 0;
+
+    @include tablet {
+      @include apply-typography(section-header);
+    }
   }
 
   &__image {
@@ -124,7 +166,6 @@
 
   &__title {
     @include apply-mobile-typography(section-header);
-    font-weight: $font-weight-demi;
     color: $primary-color-white;
     padding-bottom: 1rem;
     margin: 0;

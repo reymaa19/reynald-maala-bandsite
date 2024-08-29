@@ -1,9 +1,0 @@
-@use './variables' as *;
-
-@function get-color($palette, $color) {
-  @return map-get(map-get($color-palette, $palette), $color);
-}
-
-@function get-mobile-typography($element, $property) {
-  @return map-get(map-get($mobile-typography, $element), $property);
-}
