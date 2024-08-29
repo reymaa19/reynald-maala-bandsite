@@ -6,8 +6,8 @@
 
   @include tablet {
     @include flex-container;
-    padding: 0;
     gap: 4.5rem;
+    padding: 0;
   }
 
   &__logo {
@@ -76,7 +76,7 @@
   @include tablet {
     background-position: bottom;
     padding-left: 2.25rem;
-    min-height: 29rem;
+    min-height: 27.8rem;
   }
 
   &__title {
@@ -92,6 +92,7 @@
 
 .about {
   padding: 1rem 1rem 0 1rem;
+
   @include tablet {
     padding: 2.25rem 2.25rem 0 2.25rem;
   }
@@ -104,20 +105,42 @@
 
     @include tablet {
       @include apply-typography(section-header);
+      padding-bottom: 1.5rem;
+    }
+  }
+
+  &__content {
+    @include tablet {
+      padding: 0 3.6rem 0 3.6rem;
+    }
+  }
+
+  &__image-container {
+    @include flex-container($justify: center, $align: center);
+    margin-bottom: 0.5rem;
+    max-height: 12rem;
+    overflow: hidden;
+
+    @include tablet {
+      margin-bottom: 1.5rem;
+      max-height: 21rem;
     }
   }
 
   &__image {
     width: 100%;
-    padding-bottom: 0.5rem;
   }
 
   &__quote {
-    @include apply-mobile-typography(body);
-    font-weight: $font-weight-demi;
+    @include apply-mobile-typography(quote);
     color: $primary-color-black;
-    margin: 0;
     padding-bottom: 0.5rem;
+    margin: 0;
+
+    @include tablet {
+      @include apply-typography(quote);
+      padding-bottom: 0.8rem;
+    }
   }
 
   &__quotee {
@@ -126,6 +149,12 @@
     color: $primary-color-black;
     padding-bottom: 1.25rem;
     margin: 0;
+
+    @include tablet {
+      @include apply-typography(body);
+      font-weight: $font-weight-demi;
+      padding-bottom: 2.8rem;
+    }
   }
 
   &__subtitle {
@@ -133,6 +162,18 @@
     color: $secondary-color-black;
     padding-bottom: 0.75rem;
     margin: 0;
+
+    @include tablet {
+      @include apply-typography(subheader);
+      padding-bottom: 1.25rem;
+    }
+  }
+
+  &__details-container {
+    @include tablet {
+      @include flex-container($justify: flex-start, $align: flex-start);
+      gap: 2.5rem;
+    }
   }
 
   &__details {
@@ -140,6 +181,11 @@
     color: $primary-color-black;
     padding-bottom: 1rem;
     margin: 0;
+
+    @include tablet {
+      @include apply-typography(body);
+      padding-bottom: 2.25rem;
+    }
   }
 }
 
@@ -147,39 +193,84 @@
   background-color: $secondary-color-white;
   padding: 1rem 1rem 0rem 1rem;
 
+  @include tablet {
+    padding: 2.25rem 2.25rem 0rem 2.25rem;
+  }
+
   &__title {
     @include apply-mobile-typography(section-header);
     color: $primary-color-black;
     padding-bottom: 0.5rem;
     margin: 0;
+
+    @include tablet {
+      @include apply-typography(section-header);
+      padding-bottom: 1.3rem;
+    }
+  }
+}
+
+.photo-gallery {
+  @include tablet {
+    @include flex-container;
+    padding-bottom: 2.25rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
   }
 }
 
 .photo {
   padding-bottom: 0.5rem;
   width: 100%;
+
+  @include tablet {
+    flex-grow: 1;
+    padding: 0;
+    width: 29%;
+  }
 }
 
 .footer {
   background-color: $primary-color-black;
-  padding: 1rem 1rem;
+  padding: 1rem;
+
+  @include tablet {
+    padding: 2.25rem;
+  }
+
+  &__container {
+    @include tablet {
+      @include flex-container($align: baseline);
+      padding-bottom: 1.25rem;
+      gap: 2rem;
+    }
+  }
 
   &__title {
     @include apply-mobile-typography(section-header);
     color: $primary-color-white;
     padding-bottom: 1rem;
     margin: 0;
+
+    @include tablet {
+      @include apply-typography(section-header);
+    }
   }
 
   &__icons {
     @include flex-container;
     padding-bottom: 1.5rem;
-    width: 50%;
     gap: 2rem;
   }
 
   &__info {
     @include flex-container(column);
+
+    @include tablet {
+      padding-bottom: 1.5rem;
+      flex-direction: row;
+      gap: 3rem;
+    }
   }
 
   &__info-title {
@@ -188,32 +279,65 @@
     color: $primary-color-white;
     padding-bottom: 1rem;
     margin: 0;
+
+    @include tablet {
+      @include apply-typography(footer);
+      font-weight: $font-weight-demi;
+      padding-bottom: 1.5rem;
+    }
   }
 
   &__address {
     @include apply-mobile-typography(footer);
     color: $primary-color-white;
     font-style: normal;
+
+    @include tablet {
+      @include apply-typography(footer);
+    }
   }
 
   &__email {
     @include apply-mobile-typography(footer);
     color: $primary-color-white;
-    padding-bottom: 2rem;
     text-decoration: none;
+    padding-bottom: 2rem;
     padding-top: 1rem;
     display: block;
+
+    @include tablet {
+      @include apply-typography(footer);
+      padding-top: 1.5rem;
+    }
   }
 
   &__details {
     @include apply-mobile-typography(footer);
     color: $primary-color-white;
     margin: 0;
+
+    @include tablet {
+      @include apply-typography(footer);
+    }
   }
 
   &__logo {
-    padding-top: 1rem;
     padding-bottom: 1rem;
+    padding-top: 1rem;
+
+    @include tablet {
+      display: none;
+    }
+
+    &--primary {
+      margin-left: auto;
+      display: none;
+      padding: 0;
+
+      @include tablet {
+        display: block;
+      }
+    }
   }
 
   &__copyrite {
@@ -221,5 +345,9 @@
     color: $primary-color-white;
     padding-bottom: 0.5rem;
     margin: 0;
+
+    @include tablet {
+      @include apply-typography(footer);
+    }
   }
 }

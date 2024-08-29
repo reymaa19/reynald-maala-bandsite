@@ -50,6 +50,10 @@
     font-size: $mobile-fs-labels-and-buttons;
     font-weight: $mobile-fw-labels-and-buttons;
     line-height: $mobile-lh-labels-and-buttons;
+  } @else if $element == quote {
+    font-size: $mobile-fs-quote;
+    font-weight: $mobile-fw-quote;
+    line-height: $mobile-lh-quote;
   }
 }
 
@@ -78,5 +82,9 @@
     font-size: $fs-labels-and-buttons;
     font-weight: $fw-labels-and-buttons;
     line-height: $lh-labels-and-buttons;
+  } @else if $element == quote {
+    font-size: $fs-quote;
+    font-weight: $fw-quote;
+    line-height: $lh-quote;
   }
 }
