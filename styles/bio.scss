@@ -30,7 +30,7 @@
   }
 
   &__item {
-    padding: 0.75rem 1rem 0.5rem 1rem;
+    padding: 0.75rem 0 0.5rem 0;
     color: $secondary-color-gray;
     text-align: center;
     width: 100%;
@@ -57,9 +57,7 @@
 
     @include tablet {
       @include apply-typography(body);
-
       font-weight: inherit;
-      width: 100%;
     }
   }
 }
