@@ -2,7 +2,6 @@
 
 .header {
   background-color: $primary-color-black;
-  padding-top: 1rem;
 
   @include tablet {
     @include flex-container;
@@ -16,6 +15,11 @@
 
     @include tablet {
       padding: 1.5rem;
+    }
+
+    // Working on this
+    @include desktop {
+      margin-left: 10.2vw;
     }
   }
 }
@@ -81,6 +85,12 @@
     min-height: 27.8rem;
   }
 
+  @include desktop {
+    background-position: 50% 25%;
+    min-height: 39rem;
+    padding-left: 10.2vw;
+  }
+
   &__title {
     @include apply-mobile-typography(page-header);
     color: $primary-color-white;
@@ -99,6 +109,10 @@
     padding: 2.25rem 2.25rem 0 2.25rem;
   }
 
+  @include desktop {
+    padding: 2.25rem 10.2vw 0 10.2vw;
+  }
+
   &__title {
     @include apply-mobile-typography(section-header);
     color: $primary-color-black;
@@ -113,19 +127,28 @@
 
   &__content {
     @include tablet {
-      padding: 0 3.6rem 0 3.6rem;
+      margin: 0 3.6rem;
+    }
+
+    @include desktop {
+      margin: 0 5.5rem;
     }
   }
 
   &__image-container {
-    @include flex-container($justify: center, $align: center);
+    @include flex-container($align: flex-end);
     margin-bottom: 0.5rem;
-    max-height: 12rem;
+    max-height: 50vw;
     overflow: hidden;
 
     @include tablet {
+      align-items: center;
       margin-bottom: 1.5rem;
-      max-height: 21rem;
+      max-height: 42vw;
+    }
+
+    @include desktop {
+      max-height: 36vw;
     }
   }
 
@@ -142,6 +165,10 @@
     @include tablet {
       @include apply-typography(quote);
       padding-bottom: 0.8rem;
+    }
+
+    @include desktop {
+      width: 77%;
     }
   }
 
@@ -196,7 +223,11 @@
   padding: 1rem 1rem 0rem 1rem;
 
   @include tablet {
-    padding: 2.25rem 2.25rem 0rem 2.25rem;
+    padding: 2.25rem 2.25rem 0 2.25rem;
+  }
+
+  @include desktop {
+    padding: 2.25rem 10.2vw 0 10.2vw;
   }
 
   &__title {
@@ -240,11 +271,19 @@
     padding: 2.25rem;
   }
 
+  @include desktop {
+    padding: 2.25rem 10.2vw;
+  }
+
   &__socials {
     @include tablet {
       @include flex-container($align: baseline);
       padding-bottom: 1.25rem;
       gap: 2rem;
+    }
+
+    @include desktop {
+      gap: 3rem;
     }
   }
 
@@ -271,7 +310,7 @@
     @include tablet {
       padding-bottom: 1.5rem;
       flex-direction: row;
-      gap: 3rem;
+      gap: 4rem;
     }
   }
 
@@ -323,7 +362,8 @@
     }
   }
 
-  &__logo {
+  &__logo-link {
+    display: block;
     padding-bottom: 1rem;
     padding-top: 1rem;
 
