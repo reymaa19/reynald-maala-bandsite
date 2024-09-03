@@ -6,7 +6,7 @@
 
   @include tablet {
     @include flex-container;
-    gap: $padding-lg;
+    gap: $padding-xl;
     padding-top: 0;
   }
 
@@ -16,6 +16,7 @@
 
     @include tablet {
       padding: $padding-lg;
+      padding-left: 0;
     }
 
     @include desktop {
@@ -38,26 +39,15 @@
   }
 
   &__item {
-    padding: 0.75rem 0 $padding-xs 0;
     color: $secondary-color-gray;
     text-align: center;
     width: 100%;
-
-    &--active,
-    &:hover {
-      border-bottom: 0.1875rem solid $primary-color-white;
-      font-weight: $font-weight-demi;
-      color: $primary-color-white;
-    }
-
-    @include tablet {
-      @include flex-container($justify: center, $align: center);
-      padding: 0;
-    }
   }
 
   &__link {
     @include apply-mobile-typography(body);
+    padding: 0.75rem 0 $padding-xs 0;
+    transition: color 0.5s ease;
     text-decoration: none;
     font-weight: inherit;
     color: inherit;
@@ -65,7 +55,20 @@
 
     @include tablet {
       @include apply-typography(body);
+      padding: $padding-lg 0;
       font-weight: inherit;
+    }
+
+    &--active {
+      border-bottom: 3px solid $primary-color-white;
+      font-weight: $font-weight-demi;
+      color: $primary-color-white;
+    }
+
+    &:hover {
+      @extend .nav__link--active;
+      color: LightGoldenRodYellow;
+      animation: pulse 0.5s ease-in-out infinite;
     }
   }
 }
@@ -168,7 +171,7 @@
     }
 
     @include desktop {
-      width: 77%;
+      width: 78%;
     }
   }
 
@@ -183,6 +186,10 @@
       @include apply-typography(body);
       font-weight: $font-weight-demi;
       padding-bottom: 2.8rem;
+    }
+
+    @include desktop {
+      font-size: 0.98rem;
     }
   }
 
@@ -252,8 +259,14 @@
   }
 
   &__image {
+    transition: filter 0.3s ease-in-out;
     padding-bottom: $padding-xs;
+    filter: grayscale(100%);
     width: 100%;
+
+    &:hover {
+      filter: grayscale(0%);
+    }
 
     @include tablet {
       flex-grow: 1;
