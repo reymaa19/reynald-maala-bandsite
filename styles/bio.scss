@@ -1,4 +1,7 @@
-@use './partials/' as *;
+@use './partials/animations' as *;
+@use './partials/mixins' as *;
+@use './partials/variables' as *;
+@use './partials/globals';
 
 .header {
   background-color: $primary-color-black;
@@ -6,7 +9,7 @@
 
   @include tablet {
     @include flex-container;
-    gap: $padding-xl;
+    gap: $padding-2xl;
     padding-top: 0;
   }
 
@@ -15,8 +18,8 @@
     margin: 0 auto;
 
     @include tablet {
-      padding: $padding-lg;
-      padding-left: 0;
+      padding: $padding-lg 0;
+      margin-left: 2.25rem;
     }
 
     @include desktop {
@@ -45,7 +48,9 @@
   }
 
   &__link {
-    @include apply-mobile-typography(body);
+    font-size: $mobile-fs-body;
+    font-weight: $font-weight-regular;
+    line-height: $mobile-lh-body;
     padding: 0.75rem 0 $padding-xs 0;
     transition: color 0.5s ease;
     text-decoration: none;
@@ -54,7 +59,8 @@
     display: block;
 
     @include tablet {
-      @include apply-typography(body);
+      font-size: $fs-body;
+      line-height: $lh-body;
       padding: $padding-lg 0;
       font-weight: inherit;
     }
@@ -68,7 +74,10 @@
     &:hover {
       @extend .nav__link--active;
       color: LightGoldenRodYellow;
-      animation: pulse 0.5s ease-in-out infinite;
+
+      @include tablet {
+        animation: pulse 0.5s ease-in-out infinite;
+      }
     }
   }
 }
@@ -95,12 +104,15 @@
   }
 
   &__title {
-    @include apply-mobile-typography(page-header);
+    font-size: $mobile-fs-page-header;
+    font-weight: $font-weight-demi;
+    line-height: $mobile-lh-page-header;
     color: $primary-color-white;
     margin: 0;
 
     @include tablet {
-      @include apply-typography(page-header);
+      font-size: $fs-page-header;
+      line-height: $lh-page-header;
     }
   }
 }
@@ -117,13 +129,16 @@
   }
 
   &__title {
-    @include apply-mobile-typography(section-header);
+    font-size: $mobile-fs-section-header;
+    font-weight: $font-weight-demi;
+    line-height: $mobile-lh-section-header;
     color: $primary-color-black;
     padding-bottom: $padding-xs;
     margin: 0;
 
     @include tablet {
-      @include apply-typography(section-header);
+      font-size: $fs-section-header;
+      line-height: $lh-section-header;
       padding-bottom: $padding-lg;
     }
   }
@@ -160,13 +175,16 @@
   }
 
   &__quote {
-    @include apply-mobile-typography(quote);
+    font-size: $mobile-fs-quote;
+    font-weight: $font-weight-demi;
+    line-height: $mobile-lh-quote;
     color: $primary-color-black;
     padding-bottom: $padding-xs;
     margin: 0;
 
     @include tablet {
-      @include apply-typography(quote);
+      font-size: $fs-quote;
+      line-height: $lh-quote;
       padding-bottom: 0.8rem;
     }
 
@@ -176,31 +194,31 @@
   }
 
   &__quote-footer {
-    @include apply-mobile-typography(body);
+    font-size: $mobile-fs-body;
     font-weight: $font-weight-demi;
+    line-height: $mobile-lh-body;
     color: $primary-color-black;
     padding-bottom: $padding-md;
     margin: 0;
 
     @include tablet {
-      @include apply-typography(body);
-      font-weight: $font-weight-demi;
+      font-size: $fs-body;
+      line-height: $lh-body;
       padding-bottom: 2.8rem;
-    }
-
-    @include desktop {
-      font-size: 0.98rem;
     }
   }
 
   &__subtitle {
-    @include apply-mobile-typography(subheader);
+    font-size: $mobile-fs-subheader;
+    font-weight: $font-weight-demi;
+    line-height: $mobile-lh-subheader;
     color: $secondary-color-black;
     padding-bottom: 0.75rem;
     margin: 0;
 
     @include tablet {
-      @include apply-typography(subheader);
+      font-size: $fs-subheader;
+      line-height: $lh-subheader;
       padding-bottom: $padding-md;
     }
   }
@@ -213,13 +231,16 @@
   }
 
   &__text {
-    @include apply-mobile-typography(body);
+    font-size: $mobile-fs-body;
+    font-weight: $font-weight-regular;
+    line-height: $mobile-lh-body;
     color: $primary-color-black;
     padding-bottom: $padding-sm;
     margin: 0;
 
     @include tablet {
-      @include apply-typography(body);
+      font-size: $fs-body;
+      line-height: $lh-body;
       padding-bottom: $padding-xl;
     }
   }
@@ -238,13 +259,16 @@
   }
 
   &__title {
-    @include apply-mobile-typography(section-header);
+    font-size: $mobile-fs-section-header;
+    font-weight: $font-weight-demi;
+    line-height: $mobile-lh-section-header;
     color: $primary-color-black;
     padding-bottom: $padding-xs;
     margin: 0;
 
     @include tablet {
-      @include apply-typography(section-header);
+      font-size: $fs-section-header;
+      line-height: $lh-section-header;
       padding-bottom: 1.3rem;
     }
   }
@@ -277,10 +301,15 @@
 }
 
 .footer {
+  font-size: $mobile-fs-footer;
+  font-weight: $font-weight-regular;
+  line-height: $mobile-lh-footer;
   background-color: $primary-color-black;
   padding: $padding-sm;
 
   @include tablet {
+    font-size: $fs-footer;
+    line-height: $lh-footer;
     padding: $padding-xl;
   }
 
@@ -292,22 +321,21 @@
     @include tablet {
       @include flex-container($align: baseline);
       padding-bottom: $padding-md;
-      gap: 2rem;
-    }
-
-    @include desktop {
-      gap: $padding-2xl;
+      gap: 3.54rem;
     }
   }
 
   &__title {
-    @include apply-mobile-typography(section-header);
+    font-size: $mobile-fs-section-header;
+    font-weight: $font-weight-demi;
+    line-height: $mobile-lh-section-header;
     color: $primary-color-white;
     padding-bottom: $padding-sm;
     margin: 0;
 
     @include tablet {
-      @include apply-typography(section-header);
+      font-size: $fs-section-header;
+      line-height: $lh-section-header;
     }
   }
 
@@ -328,31 +356,21 @@
   }
 
   &__info-title {
-    @include apply-mobile-typography(footer);
-    font-weight: $font-weight-demi;
     color: $primary-color-white;
     padding-bottom: $padding-sm;
     margin: 0;
 
     @include tablet {
-      @include apply-typography(footer);
-      font-weight: $font-weight-demi;
       padding-bottom: $padding-lg;
     }
   }
 
   &__address {
-    @include apply-mobile-typography(footer);
     color: $primary-color-white;
     font-style: normal;
-
-    @include tablet {
-      @include apply-typography(footer);
-    }
   }
 
   &__email {
-    @include apply-mobile-typography(footer);
     color: $primary-color-white;
     text-decoration: none;
     padding-bottom: $padding-xl;
@@ -360,19 +378,13 @@
     display: block;
 
     @include tablet {
-      @include apply-typography(footer);
       padding-top: $padding-lg;
     }
   }
 
   &__text {
-    @include apply-mobile-typography(footer);
     color: $primary-color-white;
     margin: 0;
-
-    @include tablet {
-      @include apply-typography(footer);
-    }
   }
 
   &__logo-link {
@@ -396,13 +408,8 @@
   }
 
   &__copyright {
-    @include apply-mobile-typography(footer);
     color: $primary-color-white;
     padding-bottom: $padding-xs;
     margin: 0;
-
-    @include tablet {
-      @include apply-typography(footer);
-    }
   }
 }

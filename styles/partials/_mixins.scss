@@ -1,13 +1,13 @@
 @use './variables' as *;
 
-@mixin desktop {
-  @media (min-width: $breakpoint-large) {
+@mixin tablet {
+  @media (min-width: $breakpoint-medium) {
     @content;
   }
 }
 
-@mixin tablet {
-  @media (min-width: $breakpoint-medium) {
+@mixin desktop {
+  @media (min-width: $breakpoint-large) {
     @content;
   }
 }
@@ -23,68 +23,4 @@
   list-style-type: none;
   padding: 0;
   margin: 0;
-}
-
-@mixin apply-mobile-typography($element) {
-  @if $element == page-header {
-    font-size: $mobile-fs-page-header;
-    font-weight: $mobile-fw-page-header;
-    line-height: $mobile-lh-page-header;
-  } @else if $element == section-header {
-    font-size: $mobile-fs-section-header;
-    font-weight: $mobile-fw-section-header;
-    line-height: $mobile-lh-section-header;
-  } @else if $element == subheader {
-    font-size: $mobile-fs-subheader;
-    font-weight: $mobile-fw-subheader;
-    line-height: $mobile-lh-subheader;
-  } @else if $element == body {
-    font-size: $mobile-fs-body;
-    font-weight: $mobile-fw-body;
-    line-height: $mobile-lh-body;
-  } @else if $element == footer {
-    font-size: $mobile-fs-footer;
-    font-weight: $mobile-fw-footer;
-    line-height: $mobile-lh-footer;
-  } @else if $element == labels-and-buttons {
-    font-size: $mobile-fs-labels-and-buttons;
-    font-weight: $mobile-fw-labels-and-buttons;
-    line-height: $mobile-lh-labels-and-buttons;
-  } @else if $element == quote {
-    font-size: $mobile-fs-quote;
-    font-weight: $mobile-fw-quote;
-    line-height: $mobile-lh-quote;
-  }
-}
-
-@mixin apply-typography($element) {
-  @if $element == page-header {
-    font-size: $fs-page-header;
-    font-weight: $fw-page-header;
-    line-height: $lh-page-header;
-  } @else if $element == section-header {
-    font-size: $fs-section-header;
-    font-weight: $fw-section-header;
-    line-height: $lh-section-header;
-  } @else if $element == subheader {
-    font-size: $fs-subheader;
-    font-weight: $fw-subheader;
-    line-height: $lh-subheader;
-  } @else if $element == body {
-    font-size: $fs-body;
-    font-weight: $fw-body;
-    line-height: $lh-body;
-  } @else if $element == footer {
-    font-size: $fs-footer;
-    font-weight: $fw-footer;
-    line-height: $lh-footer;
-  } @else if $element == labels-and-buttons {
-    font-size: $fs-labels-and-buttons;
-    font-weight: $fw-labels-and-buttons;
-    line-height: $lh-labels-and-buttons;
-  } @else if $element == quote {
-    font-size: $fs-quote;
-    font-weight: $fw-quote;
-    line-height: $lh-quote;
-  }
 }
