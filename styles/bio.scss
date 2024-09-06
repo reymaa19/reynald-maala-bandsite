@@ -109,7 +109,6 @@
     font-weight: $font-weight-demi;
     line-height: $mobile-lh-page-header;
     color: $primary-color-white;
-    margin: 0;
 
     @include tablet {
       font-size: $fs-page-header;
@@ -135,7 +134,6 @@
     line-height: $mobile-lh-section-header;
     color: $primary-color-black;
     padding-bottom: $padding-xs;
-    margin: 0;
 
     @include tablet {
       font-size: $fs-section-header;
@@ -181,7 +179,6 @@
     line-height: $mobile-lh-quote;
     color: $primary-color-black;
     padding-bottom: $padding-xs;
-    margin: 0;
 
     @include tablet {
       font-size: $fs-quote;
@@ -200,7 +197,6 @@
     line-height: $mobile-lh-body;
     color: $primary-color-black;
     padding-bottom: $padding-md;
-    margin: 0;
 
     @include tablet {
       font-size: $fs-body;
@@ -215,7 +211,6 @@
     line-height: $mobile-lh-subheader;
     color: $secondary-color-black;
     padding-bottom: 0.75rem;
-    margin: 0;
 
     @include tablet {
       font-size: $fs-subheader;
@@ -241,7 +236,6 @@
     line-height: $mobile-lh-body;
     color: $primary-color-black;
     padding-bottom: $padding-sm;
-    margin: 0;
 
     @include tablet {
       font-size: $fs-body;
@@ -269,7 +263,6 @@
     line-height: $mobile-lh-section-header;
     color: $primary-color-black;
     padding-bottom: $padding-xs;
-    margin: 0;
 
     @include tablet {
       font-size: $fs-section-header;
@@ -305,6 +298,127 @@
   }
 }
 
+.comments-form {
+  @include flex-container;
+  font-size: $mobile-fs-labels-and-buttons;
+  font-weight: $font-weight-demi;
+  color: $primary-color-gray;
+  gap: $padding-sm;
+  border-bottom: 1px solid $secondary-color-gray;
+  padding-bottom: $padding-sm;
+
+  @include tablet {
+    font-size: $fs-labels-and-buttons;
+  }
+
+  &__form-avatar {
+    min-width: $mobile-avatar-size;
+    max-height: $mobile-avatar-size;
+    background-color: blue;
+    border-radius: 50%;
+    margin-top: $padding-lg;
+    background-image: url('../assets/images/Mohan-muruge.jpg');
+    background-size: cover;
+
+    @include tablet {
+      min-width: $avatar-size;
+      max-height: $avatar-size;
+    }
+  }
+
+  &__inputs {
+    @include flex-container(column);
+    width: 100%;
+  }
+
+  &__input {
+    min-height: $mobile-form-height;
+    border: $form-field-border;
+    border-radius: $form-radius;
+    margin: 0.25rem 0 $padding-sm 0;
+    color: $primary-color-black;
+    font-family: inherit;
+    padding: 0 0.5rem;
+    background-color: $secondary-color-white;
+
+    @include tablet {
+      min-height: $form-height;
+    }
+
+    &--textarea {
+      padding: 0.5rem;
+      min-height: 4rem;
+      resize: none;
+    }
+
+    &::placeholder {
+      color: $primary-color-black;
+    }
+  }
+
+  &__button {
+    font-family: inherit;
+    font-weight: $font-weight-demi;
+    line-height: $mobile-lh-labels-and-buttons;
+    color: $primary-color-white;
+    background-color: $primary-color-black;
+    border-radius: $form-radius;
+    height: $cta-button-height;
+    padding: 0 $cta-button-padding;
+    border: none;
+
+    @include tablet {
+      line-height: $lh-labels-and-buttons;
+      width: $cta-button-width;
+      align-self: flex-end;
+      cursor: pointer;
+    }
+
+    &:hover {
+      background-color: $secondary-color-black;
+    }
+  }
+}
+
+.comments {
+  margin: $padding-sm;
+  font-size: $mobile-fs-body;
+  font-weight: $font-weight-regular;
+  line-height: $mobile-lh-body;
+
+  @include tablet {
+    margin: $padding-xl;
+  }
+
+  @include desktop {
+    margin: $padding-xl 10.2vw 0 10.2vw;
+  }
+
+  &__title {
+    font-size: $mobile-fs-section-header;
+    font-weight: $font-weight-demi;
+    line-height: $mobile-lh-section-header;
+    color: $primary-color-black;
+    margin-bottom: $padding-sm;
+
+    @include tablet {
+      font-size: $fs-section-header;
+      line-height: $lh-section-header;
+      margin-bottom: $padding-lg;
+    }
+  }
+
+  &__content {
+    @include tablet {
+      margin: 0 7.5vw;
+    }
+
+    @include desktop {
+      margin: 0 20.1vw;
+    }
+  }
+}
+
 .footer {
   font-size: $mobile-fs-footer;
   font-weight: $font-weight-regular;
@@ -336,7 +450,6 @@
     line-height: $mobile-lh-section-header;
     color: $primary-color-white;
     padding-bottom: $padding-sm;
-    margin: 0;
 
     @include tablet {
       font-size: $fs-section-header;
@@ -363,7 +476,7 @@
   &__info-title {
     color: $primary-color-white;
     padding-bottom: $padding-sm;
-    margin: 0 .4219rem 0 0;
+    margin: 0 0.4219rem 0 0;
 
     @include tablet {
       padding-bottom: $padding-lg;
@@ -389,7 +502,6 @@
 
   &__text {
     color: $primary-color-white;
-    margin: 0;
   }
 
   &__logo-link {
@@ -415,6 +527,5 @@
   &__copyright {
     color: $primary-color-white;
     padding-bottom: $padding-xs;
-    margin: 0;
   }
 }
