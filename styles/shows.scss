@@ -1,0 +1,73 @@
+@use './partials/globals';
+@use './partials/mixins' as *;
+@use './partials/variables' as *;
+
+.hero {
+  @include flex-container(column);
+  background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
+    url('../assets/images/hero-shows.jpg');
+  background-position: 0% 0%;
+  background-size: cover;
+  gap: $padding-sm;
+
+  @include tablet {
+    background-position: center;
+    gap: $padding-xl;
+  }
+
+  @include desktop {
+    background-position: 50% 25%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__subtitle {
+    font-size: $mobile-fs-subheader;
+    font-weight: $font-weight-regular;
+    line-height: $mobile-lh-subheader;
+    margin: $padding-lg 0 $padding-sm 0;
+
+    @include tablet {
+      font-size: $fs-subheader;
+      line-height: $lh-subheader;
+      margin-top: $padding-xl;
+    }
+
+    @include desktop {
+      margin-top: 0;
+    }
+  }
+
+  &__title {
+    width: 15rem;
+
+    @include tablet {
+      width: 38.3rem;
+    }
+
+    @include desktop {
+      width: 31.7rem;
+    }
+  }
+
+  &__iframe {
+    height: 7.4rem;
+    width: 17.875rem;
+    margin-bottom: $padding-lg;
+
+    @include tablet {
+      height: 8.5rem;
+      width: 26rem;
+      margin-bottom: $padding-xl;
+    }
+
+    @include desktop {
+      margin: $padding-lg 0 0 0;
+    }
+  }
+}
+
+.__sc-media {
+  margin-bottom: -58rem;
+}

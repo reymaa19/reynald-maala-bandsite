@@ -1,119 +1,17 @@
-@use './partials/animations' as *;
 @use './partials/mixins' as *;
 @use './partials/variables' as *;
 @use './partials/globals';
-
-.header {
-  background-color: $primary-color-black;
-  padding-top: $padding-sm;
-
-  @include tablet {
-    @include flex-container;
-    gap: 8vw;
-    padding-top: 0.1875rem;
-  }
-
-  &__logo {
-    display: block;
-    margin: 0 auto;
-
-    @include tablet {
-      padding: $padding-lg 0;
-      margin-left: $padding-xl;
-      margin-top: 0.375rem;
-    }
-
-    @include desktop {
-      margin-left: 10.2vw;
-    }
-  }
-}
-
-.nav {
-  @include tablet {
-    @include flex-container;
-    gap: 8vw;
-    padding: 0;
-  }
-
-  &__list {
-    @include flex-container($justify: space-around);
-    @include reset-list;
-    gap: inherit;
-  }
-
-  &__item {
-    color: $secondary-color-gray;
-    text-align: center;
-    width: 100%;
-  }
-
-  &__link {
-    font-size: $mobile-fs-body;
-    font-weight: $font-weight-regular;
-    line-height: $mobile-lh-body;
-    padding: 0.75rem 0 $padding-xs 0;
-    transition: color 0.5s ease;
-    text-decoration: none;
-    font-weight: inherit;
-    color: inherit;
-    display: block;
-
-    @include tablet {
-      font-size: $fs-body;
-      line-height: $lh-body;
-      padding: $padding-lg 0;
-      font-weight: inherit;
-    }
-
-    &--active {
-      border-bottom: 3px solid $primary-color-white;
-      font-weight: $font-weight-demi;
-      color: $primary-color-white;
-    }
-
-    &:hover {
-      @extend .nav__link--active;
-      color: LightGoldenRodYellow;
-
-      @include tablet {
-        animation: pulse 0.5s ease-in-out infinite;
-      }
-    }
-  }
-}
 
 .hero {
   @include flex-container($align: center);
   background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
     url('../assets/images/hero-bio.jpg');
-  aspect-ratio: 1.7;
   background-position: center;
   background-size: cover;
-  padding-left: $padding-sm;
+  aspect-ratio: 1.7;
 
   @include tablet {
     aspect-ratio: 1.66;
-    background-position: bottom;
-    padding-left: $padding-xl;
-  }
-
-  @include desktop {
-    aspect-ratio: 1.85;
-    background-position: 50% 25%;
-    padding-left: 10.2vw;
-  }
-
-  &__title {
-    font-size: $mobile-fs-page-header;
-    font-weight: $font-weight-demi;
-    line-height: $mobile-lh-page-header;
-    color: $primary-color-white;
-
-    @include tablet {
-      font-size: $fs-page-header;
-      line-height: $lh-page-header;
-    }
   }
 }
 
@@ -455,116 +353,5 @@
 
   &__date {
     color: $primary-color-gray;
-  }
-}
-
-.footer {
-  font-size: $mobile-fs-footer;
-  font-weight: $font-weight-regular;
-  line-height: $mobile-lh-footer;
-  background-color: $primary-color-black;
-  padding: $padding-sm;
-
-  @include tablet {
-    font-size: $fs-footer;
-    line-height: $lh-footer;
-    padding: $padding-xl;
-  }
-
-  @include desktop {
-    padding: $padding-xl 10.2vw;
-  }
-
-  &__socials {
-    @include tablet {
-      @include flex-container($align: baseline);
-      padding-bottom: $padding-md;
-      gap: 5vw;
-    }
-  }
-
-  &__title {
-    font-size: $mobile-fs-section-header;
-    font-weight: $font-weight-demi;
-    line-height: $mobile-lh-section-header;
-    color: $primary-color-white;
-    padding-bottom: $padding-sm;
-
-    @include tablet {
-      font-size: $fs-section-header;
-      line-height: $lh-section-header;
-    }
-  }
-
-  &__icons {
-    @include flex-container;
-    padding-bottom: $padding-lg;
-    gap: 3vw;
-  }
-
-  &__info {
-    @include flex-container(column);
-
-    @include tablet {
-      padding-bottom: $padding-lg;
-      flex-direction: row;
-      gap: 5vw;
-    }
-  }
-
-  &__info-title {
-    color: $primary-color-white;
-    padding-bottom: $padding-sm;
-    margin: 0 0.4219rem 0 0;
-
-    @include tablet {
-      padding-bottom: $padding-lg;
-    }
-  }
-
-  &__address {
-    color: $primary-color-white;
-    font-style: normal;
-  }
-
-  &__email {
-    color: $primary-color-white;
-    text-decoration: none;
-    padding-bottom: $padding-xl;
-    padding-top: $padding-sm;
-    display: block;
-
-    @include tablet {
-      padding-top: $padding-lg;
-    }
-  }
-
-  &__text {
-    color: $primary-color-white;
-  }
-
-  &__logo-link {
-    display: block;
-    padding-bottom: $padding-sm;
-    padding-top: $padding-sm;
-
-    @include tablet {
-      display: none;
-    }
-
-    &--primary {
-      margin-left: auto;
-      display: none;
-      padding: 0;
-
-      @include tablet {
-        display: block;
-      }
-    }
-  }
-
-  &__copyright {
-    color: $primary-color-white;
-    padding-bottom: $padding-xs;
   }
 }
