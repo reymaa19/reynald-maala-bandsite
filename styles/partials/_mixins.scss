@@ -24,3 +24,7 @@
   padding: 0;
   margin: 0;
 }
+
+@mixin divider {
+  border-bottom: $form-field-border;
+}

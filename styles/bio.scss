@@ -23,7 +23,7 @@
   }
 
   @include desktop {
-    padding: $padding-xl 10.2vw 0 10.2vw;
+    padding: $padding-xl $padding-desktop 0 $padding-desktop;
   }
 
   &__title {
@@ -152,7 +152,7 @@
   }
 
   @include desktop {
-    padding: $padding-xl 10.2vw 0 10.2vw;
+    padding: $padding-xl $padding-desktop 0 $padding-desktop;
   }
 
   &__title {
@@ -202,7 +202,7 @@
   font-weight: $font-weight-demi;
   color: $primary-color-gray;
   gap: $padding-sm;
-  border-bottom: 1px solid $secondary-color-gray;
+  @include divider;
   padding-bottom: $padding-sm;
 
   @include tablet {
@@ -253,29 +253,6 @@
       color: $primary-color-black;
     }
   }
-
-  &__button {
-    font-family: inherit;
-    font-weight: $font-weight-demi;
-    line-height: $mobile-lh-labels-and-buttons;
-    color: $primary-color-white;
-    background-color: $primary-color-black;
-    border-radius: $form-radius;
-    height: $cta-button-height;
-    padding: 0 $cta-button-padding;
-    border: none;
-
-    @include tablet {
-      line-height: $lh-labels-and-buttons;
-      width: $cta-button-width;
-      align-self: flex-end;
-      cursor: pointer;
-    }
-
-    &:hover {
-      background-color: $secondary-color-black;
-    }
-  }
 }
 
 .comments {
@@ -292,7 +269,7 @@
   }
 
   @include desktop {
-    margin: $padding-xl 10.2vw;
+    margin: $padding-xl $padding-desktop;
   }
 
   &__title {
@@ -323,7 +300,7 @@
     @include flex-container;
     gap: $padding-sm;
     padding: $padding-sm 0;
-    border-bottom: 1px solid $secondary-color-gray;
+    @include divider;
   }
 
   &__avatar {

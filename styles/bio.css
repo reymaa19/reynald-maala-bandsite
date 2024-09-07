@@ -157,6 +157,29 @@ body {
   }
 }
 
+.cta-button {
+  font-family: inherit;
+  font-weight: 600;
+  line-height: 1.25rem;
+  color: #ffffff;
+  background-color: #323232;
+  border-radius: 4px;
+  height: 2.5rem;
+  padding: 0 2rem;
+  border: none;
+}
+@media (min-width: 48rem) {
+  .cta-button {
+    line-height: 1.25rem;
+    width: 9.375rem;
+    align-self: flex-end;
+    cursor: pointer;
+  }
+}
+.cta-button:hover {
+  background-color: #000000;
+}
+
 .footer {
   font-size: 0.8125rem;
   font-weight: 400;
@@ -540,28 +563,6 @@ body {
 }
 .comments-form__input::placeholder {
   color: #323232;
-}
-.comments-form__button {
-  font-family: inherit;
-  font-weight: 600;
-  line-height: 1.25rem;
-  color: #ffffff;
-  background-color: #323232;
-  border-radius: 4px;
-  height: 2.5rem;
-  padding: 0 2rem;
-  border: none;
-}
-@media (min-width: 48rem) {
-  .comments-form__button {
-    line-height: 1.25rem;
-    width: 9.375rem;
-    align-self: flex-end;
-    cursor: pointer;
-  }
-}
-.comments-form__button:hover {
-  background-color: #000000;
 }
 
 .comments {

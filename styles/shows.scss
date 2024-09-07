@@ -68,6 +68,113 @@
   }
 }
 
-.__sc-media {
-  margin-bottom: -58rem;
+.shows {
+  margin: $padding-sm;
+
+  @include tablet {
+    margin: $padding-xl $padding-sm $padding-lg $padding-sm;
+  }
+
+  @include desktop {
+    margin-right: $padding-desktop;
+    margin-left: $padding-desktop;
+    @include flex-container;
+    gap: 9rem;
+  }
+
+  &__title {
+    line-height: $mobile-lh-section-header;
+    font-size: $mobile-fs-section-header;
+    font-weight: $font-weight-demi;
+    color: $primary-color-black;
+
+    @include tablet {
+      margin: 0 0 $padding-sm $padding-sm;
+      line-height: $lh-section-header;
+      font-size: $fs-section-header;
+    }
+
+    @include desktop {
+      margin: 0;
+    }
+  }
+
+  &__content {
+    width: 100%;
+  }
+}
+
+.shows-table {
+  width: 100%;
+
+  &__row {
+    @include flex-container(column);
+    padding-top: $padding-sm;
+    @include divider;
+
+    @include tablet {
+      padding: $padding-sm $padding-sm 0 $padding-sm;
+      align-items: baseline;
+      flex-direction: row;
+      gap: $padding-sm;
+    }
+
+    &--head {
+      display: none;
+      border-bottom: none;
+
+      @include tablet {
+        @include flex-container;
+        gap: $padding-sm;
+      }
+
+      @include desktop {
+        margin-bottom: $padding-sm;
+      }
+    }
+  }
+
+  &__label {
+    line-height: $mobile-lh-labels-and-buttons;
+    font-size: $mobile-fs-labels-and-buttons;
+    font-weight: $font-weight-demi;
+    color: $primary-color-gray;
+    letter-spacing: 0.0313rem;
+    text-align: start;
+
+    @include tablet {
+      line-height: $lh-labels-and-buttons;
+      font-size: $fs-labels-and-buttons;
+      display: none;
+      width: 100%;
+    }
+
+    &--head {
+      @include tablet {
+        display: block;
+      }
+    }
+  }
+
+  &__cell {
+    font-weight: $font-weight-regular;
+    line-height: $mobile-lh-body;
+    color: $primary-color-black;
+    font-size: $mobile-fs-body;
+    margin-bottom: $padding-sm;
+
+    @include tablet {
+      line-height: $mobile-lh-body;
+      font-size: $mobile-fs-body;
+      width: 100%;
+    }
+
+    &--focus {
+      font-weight: $font-weight-demi;
+    }
+  }
+}
+
+.cta-button {
+  width: 100%;
 }

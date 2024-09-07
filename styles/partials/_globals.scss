@@ -37,7 +37,7 @@ body {
     }
 
     @include desktop {
-      margin-left: 10.2vw;
+      margin-left: $padding-desktop;
     }
   }
 }
@@ -107,7 +107,7 @@ body {
   @include desktop {
     aspect-ratio: 1.85;
     background-position: 50% 25%;
-    padding: 0 10.2vw;
+    padding: 0 $padding-desktop;
   }
 
   &__title {
@@ -119,6 +119,29 @@ body {
       font-size: $fs-page-header;
       line-height: $lh-page-header;
     }
+  }
+}
+
+.cta-button {
+  font-family: inherit;
+  font-weight: $font-weight-demi;
+  line-height: $mobile-lh-labels-and-buttons;
+  color: $primary-color-white;
+  background-color: $primary-color-black;
+  border-radius: $form-radius;
+  height: $cta-button-height;
+  padding: 0 $cta-button-padding;
+  border: none;
+
+  @include tablet {
+    line-height: $lh-labels-and-buttons;
+    width: $cta-button-width;
+    align-self: flex-end;
+    cursor: pointer;
+  }
+
+  &:hover {
+    background-color: $secondary-color-black;
   }
 }
 
@@ -137,7 +160,7 @@ body {
   }
 
   @include desktop {
-    padding: $padding-xl 10.2vw;
+    padding: $padding-xl $padding-desktop;
   }
 
   &__socials {
