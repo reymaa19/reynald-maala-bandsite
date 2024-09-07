@@ -27,7 +27,6 @@ const newEl = (element, className, content) => {
   return newElement;
 };
 
-// Constructs a new comment object
 createCommentsCard = ({ name, timestamp, comment }) => {
   const commentsCard = newEl('div', 'comments__card');
   const commentsAvatar = newEl('div', 'comments__avatar');
@@ -55,7 +54,7 @@ const renderComments = () => {
   comments
     .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
     .forEach((comment) =>
-      // function that takes in one comment object as a parameter and displays it on the page using JavaScript DOM manipulation
+      // function that takes in one comment object as a parameter and displays it on the page using JavaScript DOM manipulation.
       commentsGalleryEl.appendChild(createCommentsCard(comment))
     );
 };
@@ -69,6 +68,7 @@ const handleCommentsFormSubmit = (e) => {
   const comment = form.comment.value;
   const timestamp = new Date().toLocaleDateString('es-pa');
 
+  // Constructs a new comment object
   // Pushes a new comment object to an array of comments
   comments.push({ name, timestamp, comment });
 
