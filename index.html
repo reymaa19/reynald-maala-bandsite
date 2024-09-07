@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Bees Knees - Official Website</title>
     <link rel="stylesheet" href="./styles/bio.css" />
+    <script src="./scripts/index-page.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -130,73 +131,28 @@
       <section class="comments">
         <h2 class="comments__title">Join the Conversation</h2>
         <div class="comments__content">
-          <form action="" class="comments-form">
+          <form action="#" class="comments-form" method="POST">
             <div class="comments-form__form-avatar"></div>
             <div class="comments-form__inputs">
-              <label for="form-name" class="comments-form__label">NAME</label>
+              <label for="name" class="comments-form__label">NAME</label>
               <input
                 type="text"
                 class="comments-form__input"
                 name="name"
-                id="form-name"
+                id="name"
                 placeholder="Enter your name"
               />
-              <label for="form-comment" class="comments-form__label"
-                >COMMENT</label
-              >
+              <label for="comment" class="comments-form__label">COMMENT</label>
               <textarea
                 class="comments-form__input comments-form__input--textarea"
                 placeholder="Add a new comment"
+                id="comment"
+                name="comment"
               ></textarea>
               <button class="comments-form__button">COMMENT</button>
             </div>
           </form>
-          <div class="comments__gallery">
-            <div class="comments__card">
-              <div class="comments__avatar"></div>
-              <div class="comments__details">
-                <div class="comments__head">
-                  <h4 class="comments__name">Victor Pinto</h4>
-                  <time class="comments__date">11/02/2023</time>
-                </div>
-                <p class="comments__text">
-                  This is art. This is inexplicable magic expressed in the
-                  purest way, everything that makes up this majestic work
-                  deserves reverence. Let us appreciate this for what it is and
-                  what it contains.
-                </p>
-              </div>
-            </div>
-            <div class="comments__card">
-              <div class="comments__avatar"></div>
-              <div class="comments__details">
-                <div class="comments__head">
-                  <h4 class="comments__name">Christina Cabrera</h4>
-                  <time class="comments__date">10/28/2023</time>
-                </div>
-                <p class="comments__text">
-                  I feel blessed to have seen them in person. What a show! They
-                  were just perfection. If there was one day of my life I could
-                  relive, this would be it. What an incredible day.
-                </p>
-              </div>
-            </div>
-            <div class="comments__card">
-              <div class="comments__avatar"></div>
-              <div class="comments__details">
-                <div class="comments__head">
-                  <h4 class="comments__name">Isaac Tadesse</h4>
-                  <time class="comments__date">10/20/2023</time>
-                </div>
-                <p class="comments__text">
-                  I can't stop listening. Every time I hear one of their songs -
-                  the vocals - it gives me goosebumps. Shivers straight down my
-                  spine. What a beautiful expression of creativity. Can't get
-                  enough.
-                </p>
-              </div>
-            </div>
-          </div>
+          <div class="comments__gallery"></div>
         </div>
       </section>
     </main>

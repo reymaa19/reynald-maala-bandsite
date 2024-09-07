@@ -453,15 +453,18 @@ body {
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.125rem;
+  color: #323232;
 }
 @media (min-width: 48rem) {
   .comments {
     margin: 2.7rem;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
   }
 }
 @media (min-width: 80rem) {
   .comments {
-    margin: 2.7rem 10.2vw 0 10.2vw;
+    margin: 2.7rem 10.2vw;
   }
 }
 .comments__title {
@@ -487,6 +490,43 @@ body {
   .comments__content {
     margin: 0 20.1vw;
   }
+}
+.comments__card {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e1e1e1;
+}
+.comments__avatar {
+  min-width: 2.25rem;
+  height: 2.25rem;
+  background-color: #e1e1e1;
+  border-radius: 50%;
+}
+@media (min-width: 48rem) {
+  .comments__avatar {
+    min-width: 3rem;
+    height: 3rem;
+  }
+}
+.comments__details {
+  width: 100%;
+}
+.comments__head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-bottom: 0.5rem;
+}
+.comments__name {
+  font-weight: 600;
+}
+.comments__date {
+  color: #afafaf;
 }
 
 .footer {
