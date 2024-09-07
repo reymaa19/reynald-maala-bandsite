@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Bees Knees - Shows</title>
     <link rel="stylesheet" href="../styles/shows.css" />
-    <script src="../scripts/build-shows-page.js" defer></script>
+    <script src="../scripts/utils.js" type="module"></script>
+    <script src="../scripts/build-shows-page.js" type="module" defer></script>
   </head>
   <body>
     <header class="header">
@@ -48,57 +49,8 @@
         <h2 class="shows__title">Shows</h2>
         <div class="shows__content">
           <table class="shows-table">
-            <tr class="shows-table__row shows-table__row--head">
-              <th
-                class="shows-table__label shows-table__label--head"
-                scope="col"
-              >
-                DATE
-              </th>
-              <th
-                class="shows-table__label shows-table__label--head"
-                scope="col"
-              >
-                VENUE
-              </th>
-              <th
-                class="shows-table__label shows-table__label--head"
-                scope="col"
-              >
-                LOCATION
-              </th>
-              <th
-                class="shows-table__label shows-table__label--head"
-                scope="col"
-              ></th>
-            </tr>
-
-            <tr class="shows-table__row">
-              <th class="shows-table__label" scope="row">DATE</th>
-              <td class="shows-table__cell shows-table__cell--focus">
-                Mon Sept 09 2024
-              </td>
-              <th class="shows-table__label" scope="row">VENUE</th>
-              <td class="shows-table__cell">Ronald Lane</td>
-              <th class="shows-table__label" scope="row">LOCATION</th>
-              <td class="shows-table__cell">San Francisco, CA</td>
-              <td class="shows-table__cell">
-                <button class="cta-button">BUY TICKETS</button>
-              </td>
-            </tr>
-            <tr class="shows-table__row">
-              <th class="shows-table__label" scope="row">DATE</th>
-              <td class="shows-table__cell shows-table__cell--focus">
-                Tue Sept 17 2024
-              </td>
-              <th class="shows-table__label" scope="row">VENUE</th>
-              <td class="shows-table__cell">Pier 3 East</td>
-              <th class="shows-table__label" scope="row">LOCATION</th>
-              <td class="shows-table__cell">San Francisco, CA</td>
-              <td class="shows-table__cell">
-                <button class="cta-button">BUY TICKETS</button>
-              </td>
-            </tr>
+            <thead class="shows-table__head"></thead>
+            <tbody class="shows-table__body"></tbody>
           </table>
         </div>
       </section>
