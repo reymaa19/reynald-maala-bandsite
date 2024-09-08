@@ -1,4 +1,4 @@
-import { createEl, renderElements } from './utils.js';
+import { createElement, renderElements } from './utils.js';
 
 const comments = [
   {
@@ -27,13 +27,13 @@ const sortedComments = () =>
 
 // Creates the Comments Card Component.
 const createCommentsCard = ({ name, timestamp, comment }) => {
-  const commentsCard = createEl('div', 'comments__card');
-  const commentsAvatar = createEl('div', 'comments__avatar');
-  const commentsDetails = createEl('div', 'comments__details');
-  const commentsHead = createEl('div', 'comments__head');
-  const commentsName = createEl('h4', 'comments__name', name);
-  const commentsDate = createEl('time', 'comments__date', timestamp);
-  const commentsText = createEl('p', 'comments__text', comment);
+  const commentsCard = createElement('div', 'comments__card');
+  const commentsAvatar = createElement('div', 'comments__avatar');
+  const commentsDetails = createElement('div', 'comments__details');
+  const commentsHead = createElement('div', 'comments__head');
+  const commentsName = createElement('h4', 'comments__name', name);
+  const commentsDate = createElement('time', 'comments__date', timestamp);
+  const commentsText = createElement('p', 'comments__text', comment);
 
   commentsHead.appendChild(commentsName);
   commentsHead.appendChild(commentsDate);
@@ -47,7 +47,6 @@ const createCommentsCard = ({ name, timestamp, comment }) => {
 
 // Handles the submit event of the Comments Form.
 const handleCommentsFormSubmit = (e) => {
-  // Prevents the page from reloading when submitting a new comment.
   e.preventDefault();
 
   const form = e.target;
@@ -55,22 +54,16 @@ const handleCommentsFormSubmit = (e) => {
   const comment = form.comment.value;
   const timestamp = new Date().toLocaleDateString('es-pa');
 
-  // Constructs a new comment object.
-  // Pushes a new comment object to an array of comments.
   comments.push({ name, timestamp, comment });
 
-  // Re-renders to the page all comments from the comment array.
-  renderElements(sortedComments(), createCommentsCard, commentsGalleryEl);
+  renderElements(sortedComments(), createCommentsCard, commentsFeedEl);
 
-  // Clears the input fields after submitting a new comment.
   form.reset();
 };
 
-// Form that submits using the `addEventListener`.
 const commentsFormEl = document.querySelector('.comments-form');
+const commentsFeedEl = document.querySelector('.comments__feed');
+
 commentsFormEl.addEventListener('submit', handleCommentsFormSubmit);
 
-const commentsGalleryEl = document.querySelector('.comments__gallery');
-
-// Render all the comments on page load.
-renderElements(sortedComments(), createCommentsCard, commentsGalleryEl);
+renderElements(sortedComments(), createCommentsCard, commentsFeedEl);

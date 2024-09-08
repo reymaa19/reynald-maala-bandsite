@@ -1,4 +1,4 @@
-import { createEl, renderElements } from './utils.js';
+import { createElement, renderElements } from './utils.js';
 
 const shows = [
   {
@@ -33,17 +33,21 @@ const shows = [
   },
 ];
 
-// Creates the Shows Body Row Component.
+// Creates the Shows Row Component.
 const createShowsRow = ({ timestamp, venue, location }) => {
-  const showRow = createEl('tr', 'shows-table__row');
-  const dateLabel = createEl('th', 'shows-table__label', 'DATE');
-  const venueLabel = createEl('th', 'shows-table__label', 'VENUE');
-  const locationLabel = createEl('th', 'shows-table__label', 'LOCATION');
-  const dateCell = createEl('td',['shows-table__cell', 'shows-table__cell--focus'],timestamp);
-  const venueCell = createEl('td', 'shows-table__cell', venue);
-  const locationCell = createEl('td', 'shows-table__cell', location);
-  const ctaCell = createEl('td', 'shows-table__cell');
-  const ctaButton = createEl('button', 'cta-button', 'BUY TICKETS');
+  const showRow = createElement('tr', 'shows-table__row');
+  const dateLabel = createElement('th', 'shows-table__label', 'DATE');
+  const dateCell = createElement(
+    'td',
+    ['shows-table__cell', 'shows-table__cell--focus'],
+    timestamp
+  );
+  const venueLabel = createElement('th', 'shows-table__label', 'VENUE');
+  const venueCell = createElement('td', 'shows-table__cell', venue);
+  const locationLabel = createElement('th', 'shows-table__label', 'LOCATION');
+  const locationCell = createElement('td', 'shows-table__cell', location);
+  const ctaCell = createElement('td', 'shows-table__cell');
+  const ctaButton = createElement('button', 'cta-button', 'BUY TICKETS');
 
   showRow.appendChild(dateLabel);
   showRow.appendChild(dateCell);
@@ -57,20 +61,22 @@ const createShowsRow = ({ timestamp, venue, location }) => {
   return showRow;
 };
 
-const showsTableBodyEl = document.querySelector('.shows-table__body');
-const showsBody = document.querySelector('.shows-table__body');
+// Handles the click event of the Shows Row Component.
+const handleRowClick = (e) => {
+  const row = e.target.closest('.shows-table__row');
 
-// Renders all the shows on page load.
-renderElements(shows, createShowsRow, showsBody);
-
-// Event listener for clicking show items.
-showsTableBodyEl.addEventListener('click', (e) => {
-  // Event handler for adding selected state to clicked show item.
-  if (e.target.className != 'shows-table__row') return;
+  if (!row) return;
 
   document
     .querySelectorAll('.shows-table__row')
-    .forEach((row) => row.classList.remove('shows-table__row--active'));
+    .forEach((r) => r.classList.remove('shows-table__row--active'));
 
-  e.target.classList.add('shows-table__row--active');
-});
+  row.classList.add('shows-table__row--active');
+};
+
+const showsTableBodyEl = document.querySelector('.shows-table__body');
+const showsBodyEl = document.querySelector('.shows-table__body');
+
+renderElements(shows, createShowsRow, showsBodyEl);
+
+showsTableBodyEl.addEventListener('click', handleRowClick);

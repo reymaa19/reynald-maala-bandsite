@@ -4,34 +4,34 @@
 
 .hero {
   @include flex-container(column);
+  gap: $padding-sm;
   background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
     url('../assets/images/hero-shows.jpg');
   background-position: 0% 0%;
   background-size: cover;
-  gap: $padding-sm;
 
   @include tablet {
-    background-position: center;
     gap: $padding-xl;
+    background-position: center;
   }
 
   @include desktop {
-    background-position: 50% 25%;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    background-position: 50% 25%;
   }
 
   &__subtitle {
+    margin: $padding-lg 0 $padding-sm 0;
     font-size: $mobile-fs-subheader;
     font-weight: $font-weight-regular;
     line-height: $mobile-lh-subheader;
-    margin: $padding-lg 0 $padding-sm 0;
 
     @include tablet {
+      margin-top: $padding-xl;
       font-size: $fs-subheader;
       line-height: $lh-subheader;
-      margin-top: $padding-xl;
     }
 
     @include desktop {
@@ -52,14 +52,14 @@
   }
 
   &__iframe {
+    margin-bottom: $padding-lg;
     height: 7.4rem;
     width: 17.875rem;
-    margin-bottom: $padding-lg;
 
     @include tablet {
+      margin-bottom: $padding-xl;
       height: 8.5rem;
       width: 26rem;
-      margin-bottom: $padding-xl;
     }
 
     @include desktop {
@@ -76,22 +76,22 @@
   }
 
   @include desktop {
-    margin-right: $padding-desktop;
-    margin-left: $padding-desktop;
     @include flex-container;
     gap: 9rem;
+    margin-right: $padding-desktop;
+    margin-left: $padding-desktop;
   }
 
   &__title {
-    line-height: $mobile-lh-section-header;
     font-size: $mobile-fs-section-header;
     font-weight: $font-weight-demi;
+    line-height: $mobile-lh-section-header;
     color: $primary-color-black;
 
     @include tablet {
       margin: 0 0 $padding-sm $padding-sm;
-      line-height: $lh-section-header;
       font-size: $fs-section-header;
+      line-height: $lh-section-header;
     }
 
     @include desktop {
@@ -113,10 +113,10 @@
     @include divider;
 
     @include tablet {
-      padding: $padding-sm $padding-sm 0 $padding-sm;
       align-items: baseline;
       flex-direction: row;
       gap: $padding-sm;
+      padding: $padding-sm $padding-sm 0 $padding-sm;
     }
 
     &--head {
@@ -145,19 +145,19 @@
   }
 
   &__label {
-    line-height: $mobile-lh-labels-and-buttons;
+    text-align: start;
     font-size: $mobile-fs-labels-and-buttons;
     font-weight: $font-weight-demi;
-    color: $primary-color-gray;
+    line-height: $mobile-lh-labels-and-buttons;
     letter-spacing: 0.0313rem;
+    color: $primary-color-gray;
     pointer-events: none;
-    text-align: start;
 
     @include tablet {
-      line-height: $lh-labels-and-buttons;
-      font-size: $fs-labels-and-buttons;
       display: none;
       width: 100%;
+      font-size: $fs-labels-and-buttons;
+      line-height: $lh-labels-and-buttons;
     }
 
     &--head {
@@ -168,17 +168,17 @@
   }
 
   &__cell {
+    margin-bottom: $padding-sm;
+    font-size: $mobile-fs-body;
     font-weight: $font-weight-regular;
     line-height: $mobile-lh-body;
     color: $primary-color-black;
-    font-size: $mobile-fs-body;
-    margin-bottom: $padding-sm;
     pointer-events: none;
 
     @include tablet {
-      line-height: $mobile-lh-body;
-      font-size: $mobile-fs-body;
       width: 100%;
+      font-size: $mobile-fs-body;
+      line-height: $mobile-lh-body;
     }
 
     &--focus {

@@ -1,25 +1,23 @@
 // Creates a new element using the provided element name, class name, and content.
-export const createEl = (element, className, content) => {
-  const newElement = document.createElement(element);
+export const createElement = (tagName, className, textContent) => {
+  const newElement = document.createElement(tagName);
 
-  if (Array.isArray(className))
+  if (Array.isArray(className)) {
     className.forEach((name) => newElement.classList.add(name));
-  else newElement.classList.add(className);
+  } else {
+    newElement.classList.add(className);
+  }
 
-  if (content) newElement.textContent = content;
+  if (textContent) {
+    newElement.textContent = textContent;
+  }
 
   return newElement;
 };
 
-// Renders the provided object array data into elements.
-// Creates components using the provided create component function.
-// Appends the created elements into the provided parent element.
+// Renders an array of objects into DOM elements and appends to a parent element.
 export const renderElements = (objArray, createComponent, parentEl) => {
-  // Clears all comments from the page
   parentEl.replaceChildren();
 
-  objArray.forEach((obj) =>
-    // function that takes in one comment object as a parameter and displays it on the page using JavaScript DOM manipulation.
-    parentEl.appendChild(createComponent(obj))
-  );
+  objArray.forEach((obj) => parentEl.appendChild(createComponent(obj)));
 };

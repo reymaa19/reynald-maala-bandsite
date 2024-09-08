@@ -8,17 +8,13 @@ html {
   font-family: 'Avenir Next LT Pro', Arial, Helvetica, sans-serif;
 }
 
-body {
-  margin: 0;
-}
-
 * > * {
   margin: 0;
 }
 
 .header {
-  background-color: $primary-color-black;
   padding-top: $padding-sm;
+  background-color: $primary-color-black;
 
   @include tablet {
     @include flex-container;
@@ -31,9 +27,8 @@ body {
     margin: 0 auto;
 
     @include tablet {
+      margin: 0.375rem 0 0 $padding-xl;
       padding: $padding-lg 0;
-      margin-left: $padding-xl;
-      margin-top: 0.375rem;
     }
 
     @include desktop {
@@ -51,38 +46,37 @@ body {
 
   &__list {
     @include flex-container($justify: space-around);
-    @include reset-list;
     gap: inherit;
+    @include reset-list;
   }
 
   &__item {
+    width: 100%;
     color: $secondary-color-gray;
     text-align: center;
-    width: 100%;
   }
 
   &__link {
-    font-size: $mobile-fs-body;
-    font-weight: $font-weight-regular;
-    line-height: $mobile-lh-body;
-    padding: 0.75rem 0 $padding-xs 0;
-    transition: color 0.5s ease;
-    text-decoration: none;
-    font-weight: inherit;
-    color: inherit;
     display: block;
+    padding: 0.75rem 0 $padding-xs 0;
+    font-size: $mobile-fs-body;
+    font-weight: inherit;
+    line-height: $mobile-lh-body;
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.5s ease;
 
     @include tablet {
+      padding: $padding-lg 0;
       font-size: $fs-body;
       line-height: $lh-body;
-      padding: $padding-lg 0;
       font-weight: inherit;
     }
 
     &--active {
-      border-bottom: 3px solid $primary-color-white;
       font-weight: $font-weight-demi;
       color: $primary-color-white;
+      border-bottom: 3px solid $primary-color-white;
     }
 
     &:hover {
@@ -105,9 +99,9 @@ body {
   }
 
   @include desktop {
+    padding: 0 $padding-desktop;
     aspect-ratio: 1.85;
     background-position: 50% 25%;
-    padding: 0 $padding-desktop;
   }
 
   &__title {
@@ -123,20 +117,20 @@ body {
 }
 
 .cta-button {
+  height: $cta-button-height;
+  padding: 0 $cta-button-padding;
+  background-color: $primary-color-black;
   font-family: inherit;
   font-weight: $font-weight-demi;
   line-height: $mobile-lh-labels-and-buttons;
   color: $primary-color-white;
-  background-color: $primary-color-black;
   border-radius: $form-radius;
-  height: $cta-button-height;
-  padding: 0 $cta-button-padding;
   border: none;
 
   @include tablet {
-    line-height: $lh-labels-and-buttons;
     width: $cta-button-width;
     align-self: flex-end;
+    line-height: $lh-labels-and-buttons;
     cursor: pointer;
   }
 
@@ -146,17 +140,17 @@ body {
 }
 
 .footer {
+  padding: $padding-sm;
   font-size: $mobile-fs-footer;
   font-weight: $font-weight-regular;
   line-height: $mobile-lh-footer;
   background-color: $primary-color-black;
   color: $primary-color-white;
-  padding: $padding-sm;
 
   @include tablet {
+    padding: $padding-xl;
     font-size: $fs-footer;
     line-height: $lh-footer;
-    padding: $padding-xl;
   }
 
   @include desktop {
@@ -166,16 +160,16 @@ body {
   &__socials {
     @include tablet {
       @include flex-container($align: baseline);
-      padding-bottom: $padding-md;
       gap: 5vw;
+      padding-bottom: $padding-md;
     }
   }
 
   &__title {
+    padding-bottom: $padding-sm;
     font-size: $mobile-fs-section-header;
     font-weight: $font-weight-demi;
     line-height: $mobile-lh-section-header;
-    padding-bottom: $padding-sm;
 
     @include tablet {
       font-size: $fs-section-header;
@@ -185,25 +179,23 @@ body {
 
   &__icons {
     @include flex-container;
-    padding-bottom: $padding-sm;
     gap: 3vw;
+    padding-bottom: $padding-sm;
   }
 
   &__info {
     @include flex-container(column);
 
     @include tablet {
-      padding-bottom: $padding-lg;
       flex-direction: row;
       gap: 5vw;
+      padding-bottom: $padding-lg;
     }
   }
 
   &__info-title {
+    padding: $padding-xs 0 $padding-sm;
     font-weight: $font-weight-demi;
-    padding-bottom: $padding-sm;
-    padding-top: $padding-xs;
-    margin: 0 0.4219rem 0 0;
 
     @include tablet {
       padding-bottom: $padding-lg;
@@ -215,11 +207,10 @@ body {
   }
 
   &__email {
+    display: block;
+    padding: $padding-sm 0 $padding-lg 0;
     color: inherit;
     text-decoration: none;
-    padding-bottom: $padding-lg;
-    padding-top: $padding-sm;
-    display: block;
 
     @include tablet {
       padding-top: $padding-lg;
@@ -228,16 +219,15 @@ body {
 
   &__logo-link {
     display: block;
-    padding-bottom: $padding-sm;
-    padding-top: $padding-sm;
+    padding: $padding-sm 0 $padding-sm 0;
 
     @include tablet {
       display: none;
     }
 
     &--primary {
-      margin-left: auto;
       display: none;
+      margin-left: auto;
       padding: 0;
 
       @include tablet {

@@ -27,16 +27,16 @@
   }
 
   &__title {
+    padding-bottom: $padding-xs;
     font-size: $mobile-fs-section-header;
     font-weight: $font-weight-demi;
     line-height: $mobile-lh-section-header;
     color: $primary-color-black;
-    padding-bottom: $padding-xs;
 
     @include tablet {
+      padding-bottom: $padding-lg;
       font-size: $fs-section-header;
       line-height: $lh-section-header;
-      padding-bottom: $padding-lg;
     }
   }
 
@@ -72,16 +72,16 @@
   }
 
   &__quote {
+    padding-bottom: $padding-xs;
     font-size: $mobile-fs-quote;
     font-weight: $font-weight-demi;
     line-height: $mobile-lh-quote;
     color: $primary-color-black;
-    padding-bottom: $padding-xs;
 
     @include tablet {
+      padding-bottom: 0.8rem;
       font-size: $fs-quote;
       line-height: $lh-quote;
-      padding-bottom: 0.8rem;
     }
 
     @include desktop {
@@ -90,30 +90,30 @@
   }
 
   &__quote-footer {
+    padding-bottom: $padding-md;
     font-size: $mobile-fs-body;
     font-weight: $font-weight-demi;
     line-height: $mobile-lh-body;
     color: $primary-color-black;
-    padding-bottom: $padding-md;
 
     @include tablet {
+      padding-bottom: 2.8rem;
       font-size: $fs-body;
       line-height: $lh-body;
-      padding-bottom: 2.8rem;
     }
   }
 
   &__subtitle {
+    padding-bottom: 0.75rem;
     font-size: $mobile-fs-subheader;
     font-weight: $font-weight-demi;
     line-height: $mobile-lh-subheader;
     color: $secondary-color-black;
-    padding-bottom: 0.75rem;
 
     @include tablet {
+      padding-bottom: $padding-md;
       font-size: $fs-subheader;
       line-height: $lh-subheader;
-      padding-bottom: $padding-md;
     }
   }
 
@@ -129,23 +129,23 @@
   }
 
   &__text {
+    padding-bottom: $padding-sm;
     font-size: $mobile-fs-body;
     font-weight: $font-weight-regular;
     line-height: $mobile-lh-body;
     color: $primary-color-black;
-    padding-bottom: $padding-sm;
 
     @include tablet {
+      padding-bottom: $padding-xl;
       font-size: $fs-body;
       line-height: $lh-body;
-      padding-bottom: $padding-xl;
     }
   }
 }
 
 .photos {
-  background-color: $secondary-color-white;
   padding: $padding-sm $padding-sm 0rem $padding-sm;
+  background-color: $secondary-color-white;
 
   @include tablet {
     padding: $padding-xl $padding-xl 0 $padding-xl;
@@ -156,33 +156,33 @@
   }
 
   &__title {
+    padding-bottom: $padding-xs;
     font-size: $mobile-fs-section-header;
     font-weight: $font-weight-demi;
     line-height: $mobile-lh-section-header;
     color: $primary-color-black;
-    padding-bottom: $padding-xs;
 
     @include tablet {
+      padding-bottom: 1.3rem;
       font-size: $fs-section-header;
       line-height: $lh-section-header;
-      padding-bottom: 1.3rem;
     }
   }
 
-  &__gallery {
+  &__feed {
     @include tablet {
       @include flex-container;
+      gap: $padding-lg;
       padding-bottom: $padding-xl;
       flex-wrap: wrap;
-      gap: $padding-lg;
     }
   }
 
   &__image {
-    transition: filter 0.3s ease-in-out;
     padding-bottom: $padding-xs;
-    filter: grayscale(100%);
     width: 100%;
+    transition: filter 0.3s ease-in-out;
+    filter: grayscale(100%);
 
     &:hover {
       filter: grayscale(0%);
@@ -198,25 +198,25 @@
 
 .comments-form {
   @include flex-container;
+  gap: $padding-sm;
+  padding-bottom: $padding-sm;
   font-size: $mobile-fs-labels-and-buttons;
   font-weight: $font-weight-demi;
   color: $primary-color-gray;
-  gap: $padding-sm;
   @include divider;
-  padding-bottom: $padding-sm;
 
   @include tablet {
     font-size: $fs-labels-and-buttons;
   }
 
   &__form-avatar {
+    margin-top: $padding-lg;
     min-width: $mobile-avatar-size;
     max-height: $mobile-avatar-size;
-    background-color: blue;
-    border-radius: 50%;
-    margin-top: $padding-lg;
     background-image: url('../assets/images/Mohan-muruge.jpg');
     background-size: cover;
+    background-color: blue;
+    border-radius: 50%;
 
     @include tablet {
       min-width: $avatar-size;
@@ -231,13 +231,13 @@
 
   &__input {
     min-height: $mobile-form-height;
+    margin: 0.25rem 0 $padding-sm 0;
+    padding: 0 0.5rem;
+    font-family: inherit;
+    color: $primary-color-black;
+    background-color: $secondary-color-white;
     border: $form-field-border;
     border-radius: $form-radius;
-    margin: 0.25rem 0 $padding-sm 0;
-    color: $primary-color-black;
-    font-family: inherit;
-    padding: 0 0.5rem;
-    background-color: $secondary-color-white;
 
     @include tablet {
       min-height: $form-height;
@@ -273,16 +273,15 @@
   }
 
   &__title {
+    margin-bottom: $padding-sm;
     font-size: $mobile-fs-section-header;
     font-weight: $font-weight-demi;
     line-height: $mobile-lh-section-header;
-    color: $primary-color-black;
-    margin-bottom: $padding-sm;
 
     @include tablet {
+      margin-bottom: $padding-lg;
       font-size: $fs-section-header;
       line-height: $lh-section-header;
-      margin-bottom: $padding-lg;
     }
   }
 
