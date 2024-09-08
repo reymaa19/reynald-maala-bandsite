@@ -2,28 +2,52 @@ import { createElement, renderElements } from './utils.js';
 
 const comments = [
   {
-    name: 'Isaac Tadesse',
-    timestamp: '10/20/2021',
-    comment:
-      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-  {
     name: 'Victor Pinto',
-    timestamp: '11/02/2022',
+    timestamp: '09/08/2023, 12:34:56',
     comment:
       'This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.',
   },
   {
     name: 'Christina Cabrera',
-    timestamp: '10/28/2023',
+    timestamp: '08/20/2024, 12:34:56',
     comment:
       'I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.',
+  },
+  {
+    name: 'Isaac Tadesse',
+    timestamp: '09/08/2024, 16:34:56',
+    comment:
+      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
   },
 ];
 
 // Sorts the comments array from recent to oldest.
 const sortedComments = () =>
   comments.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+// Formats the comments timestamp to a more human-readable format.
+const formatTimestamp = (timestamp) => {
+  const diffInSeconds = Math.floor((new Date() - new Date(timestamp)) / 1000);
+  const secondsInMinute = 60;
+  const secondsInHour = 3600;
+  const secondsInDay = 86400;
+  const secondsInMonth = 2592000;
+
+  if (diffInSeconds < secondsInMinute) {
+    return 'Just now';
+  } else if (diffInSeconds < secondsInHour) {
+    const minutes = Math.floor(diffInSeconds / secondsInMinute);
+    return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+  } else if (diffInSeconds < secondsInDay) {
+    const hours = Math.floor(diffInSeconds / secondsInHour);
+    return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+  } else if (diffInSeconds < secondsInMonth) {
+    const days = Math.floor(diffInSeconds / secondsInDay);
+    return `${days} day${days > 1 ? 's' : ''} ago`;
+  } else {
+    return timestamp.split(',')[0];
+  }
+};
 
 // Creates the Comments Card Component.
 const createCommentsCard = ({ name, timestamp, comment }) => {
@@ -32,7 +56,7 @@ const createCommentsCard = ({ name, timestamp, comment }) => {
   const commentsDetails = createElement('div', 'comments__details');
   const commentsHead = createElement('div', 'comments__head');
   const commentsName = createElement('h4', 'comments__name', name);
-  const commentsDate = createElement('time', 'comments__date', timestamp);
+  const commentsDate = createElement('time','comments__date',formatTimestamp(timestamp));
   const commentsText = createElement('p', 'comments__text', comment);
 
   commentsHead.appendChild(commentsName);
@@ -52,7 +76,16 @@ const handleCommentsFormSubmit = (e) => {
   const form = e.target;
   const name = form.name.value;
   const comment = form.comment.value;
-  const timestamp = new Date().toLocaleDateString('es-pa');
+  const timestamp = new Intl.DateTimeFormat('es-pa', {
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+    hour12: false,
+    timeZone: 'CST',
+  }).format(new Date());
 
   comments.push({ name, timestamp, comment });
 
