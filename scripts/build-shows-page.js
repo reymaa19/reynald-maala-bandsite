@@ -45,10 +45,6 @@ const createShowsRow = ({ timestamp, venue, location }) => {
   const ctaCell = createEl('td', 'shows-table__cell');
   const ctaButton = createEl('button', 'cta-button', 'BUY TICKETS');
 
-  dateLabel.setAttribute('scope', 'row');
-  venueLabel.setAttribute('scope', 'row');
-  locationLabel.setAttribute('scope', 'row');
-
   showRow.appendChild(dateLabel);
   showRow.appendChild(dateCell);
   showRow.appendChild(venueLabel);
@@ -61,26 +57,20 @@ const createShowsRow = ({ timestamp, venue, location }) => {
   return showRow;
 };
 
-// Creates the Shows Head Row Component.
-const createShowHeadRow = () => {
-  const showRow = createEl('tr', ['shows-table__row','shows-table__row--head',]);
-  const dateLabel = createEl('th',['shows-table__label', 'shows-table__label--head'],'DATE');
-  const venueLabel = createEl('th',['shows-table__label', 'shows-table__label--head'],'VENUE');
-  const locationLabel = createEl('th',['shows-table__label', 'shows-table__label--head'],'LOCATION');
-  const emptyLabel = createEl('th', ['shows-table__label','shows-table__label--head',]);
-
-  showRow.appendChild(dateLabel);
-  showRow.appendChild(venueLabel);
-  showRow.appendChild(locationLabel);
-  showRow.appendChild(emptyLabel);
-
-  return showRow;
-};
-
+const showsTableBodyEl = document.querySelector('.shows-table__body');
 const showsBody = document.querySelector('.shows-table__body');
-const showsHead = document.querySelector('.shows-table__head');
-
-showsHead.appendChild(createShowHeadRow());
 
 // Renders all the shows on page load.
 renderElements(shows, createShowsRow, showsBody);
+
+// Event listener for clicking show items.
+showsTableBodyEl.addEventListener('click', (e) => {
+  // Event handler for adding selected state to clicked show item.
+  if (e.target.className != 'shows-table__row') return;
+
+  document
+    .querySelectorAll('.shows-table__row')
+    .forEach((row) => row.classList.remove('shows-table__row--active'));
+
+  e.target.classList.add('shows-table__row--active');
+});

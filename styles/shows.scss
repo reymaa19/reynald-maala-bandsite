@@ -122,6 +122,7 @@
     &--head {
       display: none;
       border-bottom: none;
+      pointer-events: none;
 
       @include tablet {
         @include flex-container;
@@ -132,6 +133,15 @@
         margin-bottom: $padding-sm;
       }
     }
+
+    &:hover {
+      background-color: $secondary-color-white;
+      cursor: pointer;
+    }
+
+    &--active {
+      background-color: $secondary-color-gray;
+    }
   }
 
   &__label {
@@ -140,6 +150,7 @@
     font-weight: $font-weight-demi;
     color: $primary-color-gray;
     letter-spacing: 0.0313rem;
+    pointer-events: none;
     text-align: start;
 
     @include tablet {
@@ -162,6 +173,7 @@
     color: $primary-color-black;
     font-size: $mobile-fs-body;
     margin-bottom: $padding-sm;
+    pointer-events: none;
 
     @include tablet {
       line-height: $mobile-lh-body;
@@ -176,5 +188,6 @@
 }
 
 .cta-button {
+  pointer-events: all;
   width: 100%;
 }

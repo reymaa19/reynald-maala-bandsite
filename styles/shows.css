@@ -426,6 +426,7 @@ body {
 .shows-table__row--head {
   display: none;
   border-bottom: none;
+  pointer-events: none;
 }
 @media (min-width: 48rem) {
   .shows-table__row--head {
@@ -441,12 +442,20 @@ body {
     margin-bottom: 1rem;
   }
 }
+.shows-table__row:hover {
+  background-color: #fafafa;
+  cursor: pointer;
+}
+.shows-table__row--active {
+  background-color: #e1e1e1;
+}
 .shows-table__label {
   line-height: 1.25rem;
   font-size: 0.625rem;
   font-weight: 600;
   color: #afafaf;
   letter-spacing: 0.0313rem;
+  pointer-events: none;
   text-align: start;
 }
 @media (min-width: 48rem) {
@@ -468,6 +477,7 @@ body {
   color: #323232;
   font-size: 0.8125rem;
   margin-bottom: 1rem;
+  pointer-events: none;
 }
 @media (min-width: 48rem) {
   .shows-table__cell {
@@ -481,5 +491,6 @@ body {
 }
 
 .cta-button {
+  pointer-events: all;
   width: 100%;
 }

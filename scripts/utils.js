@@ -18,8 +18,8 @@ export const renderElements = (objArray, createComponent, parentEl) => {
   // Clears all comments from the page
   parentEl.replaceChildren();
 
-  objArray.forEach((el) =>
+  objArray.forEach((obj) =>
     // function that takes in one comment object as a parameter and displays it on the page using JavaScript DOM manipulation.
-    parentEl.appendChild(createComponent(el))
+    parentEl.appendChild(createComponent(obj))
   );
 };
