@@ -545,7 +545,7 @@ html {
 }
 .comments-form__input--textarea {
   padding: 0.5rem;
-  min-height: 4rem;
+  min-height: 5rem;
   resize: none;
 }
 .comments-form__input::-moz-placeholder {
@@ -553,6 +553,9 @@ html {
 }
 .comments-form__input::placeholder {
   color: #323232;
+}
+.comments-form__input--error {
+  border-color: #D22D2D;
 }
 
 .comments {

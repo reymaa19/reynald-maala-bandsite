@@ -37,11 +37,7 @@ const shows = [
 const createShowsRow = ({ timestamp, venue, location }) => {
   const showRow = createElement('tr', 'shows-table__row');
   const dateLabel = createElement('th', 'shows-table__label', 'DATE');
-  const dateCell = createElement(
-    'td',
-    ['shows-table__cell', 'shows-table__cell--focus'],
-    timestamp
-  );
+  const dateCell = createElement('td', ['shows-table__cell', 'shows-table__cell--focus'], timestamp);
   const venueLabel = createElement('th', 'shows-table__label', 'VENUE');
   const venueCell = createElement('td', 'shows-table__cell', venue);
   const locationLabel = createElement('th', 'shows-table__label', 'LOCATION');
@@ -65,7 +61,7 @@ const createShowsRow = ({ timestamp, venue, location }) => {
 const handleRowClick = (e) => {
   const row = e.target.closest('.shows-table__row');
 
-  if (!row) return;
+  if (!row) { return; }
 
   document
     .querySelectorAll('.shows-table__row')

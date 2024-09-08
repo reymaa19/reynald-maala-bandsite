@@ -1,5 +1,10 @@
 import { createElement, renderElements } from './utils.js';
 
+const formNameInputEl = document.getElementById('name');
+const formCommentInputEl = document.getElementById('comment');
+const commentsFormEl = document.querySelector('.comments-form');
+const commentsFeedEl = document.querySelector('.comments__feed');
+
 const comments = [
   {
     name: 'Victor Pinto',
@@ -22,8 +27,9 @@ const comments = [
 ];
 
 // Sorts the comments array from recent to oldest.
-const sortedComments = () =>
-  comments.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+const sortedComments = () => {
+  return comments.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+};
 
 // Formats the comments timestamp to a more human-readable format.
 const formatTimestamp = (timestamp) => {
@@ -56,7 +62,7 @@ const createCommentsCard = ({ name, timestamp, comment }) => {
   const commentsDetails = createElement('div', 'comments__details');
   const commentsHead = createElement('div', 'comments__head');
   const commentsName = createElement('h4', 'comments__name', name);
-  const commentsDate = createElement('time','comments__date',formatTimestamp(timestamp));
+  const commentsDate = createElement('time', 'comments__date', formatTimestamp(timestamp));
   const commentsText = createElement('p', 'comments__text', comment);
 
   commentsHead.appendChild(commentsName);
@@ -72,7 +78,6 @@ const createCommentsCard = ({ name, timestamp, comment }) => {
 // Handles the submit event of the Comments Form.
 const handleCommentsFormSubmit = (e) => {
   e.preventDefault();
-
   const form = e.target;
   const name = form.name.value;
   const comment = form.comment.value;
@@ -87,6 +92,14 @@ const handleCommentsFormSubmit = (e) => {
     timeZone: 'CST',
   }).format(new Date());
 
+  if (!name) {
+    formNameInputEl.classList.add('comments-form__input--error');
+  }
+  if (!comment) {
+    formCommentInputEl.classList.add('comments-form__input--error');
+  }
+  if (!name || !comment) { return; }
+
   comments.push({ name, timestamp, comment });
 
   renderElements(sortedComments(), createCommentsCard, commentsFeedEl);
@@ -94,8 +107,15 @@ const handleCommentsFormSubmit = (e) => {
   form.reset();
 };
 
-const commentsFormEl = document.querySelector('.comments-form');
-const commentsFeedEl = document.querySelector('.comments__feed');
+// Handles the input event of the forms input fields.
+const handleInputChange = (e) => {
+  if (e.target.value) {
+    e.target.classList.remove('comments-form__input--error');
+  }
+};
+
+formNameInputEl.addEventListener('input', handleInputChange);
+formCommentInputEl.addEventListener('input', handleInputChange);
 
 commentsFormEl.addEventListener('submit', handleCommentsFormSubmit);
 
