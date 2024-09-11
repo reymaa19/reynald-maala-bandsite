@@ -1,78 +1,74 @@
-import { createElement, renderElements } from './utils.js';
+import { createElement, renderElements } from "./utils.js";
 
+const showsListEl = document.querySelector(".shows__list");
 const shows = [
   {
-    timestamp: 'Mon Sept 09 2024',
-    venue: 'Ronald Lane',
-    location: 'San Francisco, CA',
+    timestamp: "Mon Sept 09 2024",
+    venue: "Ronald Lane",
+    location: "San Francisco, CA",
   },
   {
-    timestamp: 'Tue Sept 17 2024',
-    venue: 'Pier 3 East',
-    location: 'San Francisco, CA',
+    timestamp: "Tue Sept 17 2024",
+    venue: "Pier 3 East",
+    location: "San Francisco, CA",
   },
   {
-    timestamp: 'Sat Oct 12 2024',
-    venue: 'View Lounge',
-    location: 'San Francisco, CA ',
+    timestamp: "Sat Oct 12 2024",
+    venue: "View Lounge",
+    location: "San Francisco, CA ",
   },
   {
-    timestamp: 'Sat Nov 16 2024',
-    venue: 'Hyatt Agency',
-    location: 'San Francisco, CA',
+    timestamp: "Sat Nov 16 2024",
+    venue: "Hyatt Agency",
+    location: "San Francisco, CA",
   },
   {
-    timestamp: 'Fri Nov 29 2024',
-    venue: 'Moscow Center',
-    location: 'San Francisco, CA',
+    timestamp: "Fri Nov 29 2024",
+    venue: "Moscow Center",
+    location: "San Francisco, CA",
   },
   {
-    timestamp: 'Wed Dec 18 2024',
-    venue: 'Press Club',
-    location: 'San Francisco, CA',
+    timestamp: "Wed Dec 18 2024",
+    venue: "Press Club",
+    location: "San Francisco, CA",
   },
 ];
 
-// Creates the Shows Row Component.
-const createShowsRow = ({ timestamp, venue, location }) => {
-  const showRow = createElement('tr', 'shows-table__row');
-  const dateLabel = createElement('th', 'shows-table__label', 'DATE');
-  const dateCell = createElement('td', ['shows-table__cell', 'shows-table__cell--focus'], timestamp);
-  const venueLabel = createElement('th', 'shows-table__label', 'VENUE');
-  const venueCell = createElement('td', 'shows-table__cell', venue);
-  const locationLabel = createElement('th', 'shows-table__label', 'LOCATION');
-  const locationCell = createElement('td', 'shows-table__cell', location);
-  const ctaCell = createElement('td', 'shows-table__cell');
-  const ctaButton = createElement('button', 'cta-button', 'BUY TICKETS');
+// Creates the Shows Item Component.
+const createShowsItem = ({ timestamp, venue, location }) => {
+  const showsItem = createElement("li", "shows__item");
+  const dateLabel = createElement("h4", "shows__label", "DATE");
+  const dateValue = createElement("p", ["shows__value", "shows__value--focus"], timestamp);
+  const venueLabel = createElement("h4", "shows__label", "VENUE");
+  const venueValue = createElement("p", "shows__value", venue);
+  const locationLabel = createElement("h4", "shows__label", "LOCATION");
+  const locationValue = createElement("p", "shows__value", location);
+  const ctaValue = createElement("div", "shows__action");
+  const ctaButton = createElement("button", "cta-button", "BUY TICKETS");
 
-  showRow.appendChild(dateLabel);
-  showRow.appendChild(dateCell);
-  showRow.appendChild(venueLabel);
-  showRow.appendChild(venueCell);
-  showRow.appendChild(locationLabel);
-  showRow.appendChild(locationCell);
-  showRow.appendChild(ctaCell);
-  ctaCell.appendChild(ctaButton);
+  showsItem.appendChild(dateLabel);
+  showsItem.appendChild(dateValue);
+  showsItem.appendChild(venueLabel);
+  showsItem.appendChild(venueValue);
+  showsItem.appendChild(locationLabel);
+  showsItem.appendChild(locationValue);
+  showsItem.appendChild(ctaValue);
+  ctaValue.appendChild(ctaButton);
 
-  return showRow;
+  return showsItem;
 };
 
-// Handles the click event of the Shows Row Component.
-const handleRowClick = (e) => {
-  const row = e.target.closest('.shows-table__row');
-
-  if (!row) { return; }
+// Handles the click event of the Shows Item Component.
+const handleItemClick = (e) => {
+  const showsItemEl = e.target.closest(".shows__item");
 
   document
-    .querySelectorAll('.shows-table__row')
-    .forEach((r) => r.classList.remove('shows-table__row--active'));
+    .querySelectorAll(".shows__item")
+    .forEach((item) => item.classList.remove("shows__item--active"));
 
-  row.classList.add('shows-table__row--active');
+  showsItemEl.classList.add("shows__item--active");
 };
 
-const showsTableBodyEl = document.querySelector('.shows-table__body');
-const showsBodyEl = document.querySelector('.shows-table__body');
+renderElements(shows, createShowsItem, showsListEl);
 
-renderElements(shows, createShowsRow, showsBodyEl);
-
-showsTableBodyEl.addEventListener('click', handleRowClick);
+showsListEl.addEventListener("click", handleItemClick);

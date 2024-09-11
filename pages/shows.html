@@ -11,11 +11,7 @@
   <body>
     <header class="header">
       <a href="/" class="header__link">
-        <img
-          src="../assets/logos/Logo-bandsite.svg"
-          alt="BandSite logo"
-          class="header__logo"
-        />
+        <img src="../assets/logos/Logo-bandsite.svg" alt="BandSite logo" class="header__logo" />
       </a>
       <nav class="nav">
         <ul class="nav__list">
@@ -45,17 +41,13 @@
       <section class="shows">
         <h2 class="shows__title">Shows</h2>
         <div class="shows__content">
-          <table class="shows-table">
-            <thead class="shows-table__head">
-              <tr class="shows-table__row shows-table__row--head">
-                <th class="shows-table__label shows-table__label--head">DATE</th>
-                <th class="shows-table__label shows-table__label--head">VENUE</th>
-                <th class="shows-table__label shows-table__label--head">LOCATION</th>
-                <th class="shows-table__label shows-table__label--head"></th>
-              </tr>
-            </thead>
-            <tbody class="shows-table__body"></tbody>
-          </table>
+          <div class="shows__wrapper">
+            <h4 class="shows__label shows__label--top">DATE</h4>
+            <h4 class="shows__label shows__label--top">VENUE</h4>
+            <h4 class="shows__label shows__label--top">LOCATION</h4>
+            <h4 class="shows__label shows__label--top">&nbsp;</h4>
+          </div>
+          <ul class="shows__list"></ul>
         </div>
       </section>
     </main>

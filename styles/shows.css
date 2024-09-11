@@ -393,33 +393,13 @@ html {
 .shows__content {
   width: 100%;
 }
-
-.shows-table {
-  width: 100%;
-}
-.shows-table__row {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
-  padding-top: 1rem;
-  border-bottom: 1px solid #e1e1e1;
-}
-@media (min-width: 48rem) {
-  .shows-table__row {
-    align-items: baseline;
-    flex-direction: row;
-    gap: 1rem;
-    padding: 1rem 1rem 0 1rem;
-  }
-}
-.shows-table__row--head {
+.shows__wrapper {
   display: none;
-  border-bottom: none;
-  pointer-events: none;
+  padding: 1rem 1rem 0 1rem;
+  gap: 1rem;
 }
 @media (min-width: 48rem) {
-  .shows-table__row--head {
+  .shows__wrapper {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -428,28 +408,47 @@ html {
   }
 }
 @media (min-width: 80rem) {
-  .shows-table__row--head {
+  .shows__wrapper {
     margin-bottom: 1rem;
   }
 }
-.shows-table__row:hover {
+.shows__list {
+  padding: 0.125rem;
+}
+.shows__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding-top: 1rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+@media (min-width: 48rem) {
+  .shows__item {
+    align-items: baseline;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem 1rem 0 1rem;
+  }
+}
+.shows__item:hover {
   background-color: #fafafa;
   cursor: pointer;
 }
-.shows-table__row--active {
+.shows__item--active {
   background-color: #e1e1e1;
 }
-.shows-table__label {
+.shows__label {
+  padding: 0.0625rem;
   text-align: start;
   font-size: 0.625rem;
   font-weight: 600;
   line-height: 1.25rem;
   letter-spacing: 0.0313rem;
   color: #afafaf;
-  pointer-events: none;
 }
 @media (min-width: 48rem) {
-  .shows-table__label {
+  .shows__label {
     display: none;
     width: 100%;
     font-size: 0.75rem;
@@ -457,30 +456,28 @@ html {
   }
 }
 @media (min-width: 48rem) {
-  .shows-table__label--head {
+  .shows__label--top {
     display: block;
   }
 }
-.shows-table__cell {
+.shows__value, .shows__action {
+  padding: 0.0625rem;
   margin-bottom: 1rem;
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.125rem;
   color: #323232;
-  pointer-events: none;
 }
 @media (min-width: 48rem) {
-  .shows-table__cell {
+  .shows__value, .shows__action {
     width: 100%;
     font-size: 0.8125rem;
     line-height: 1.125rem;
   }
 }
-.shows-table__cell--focus {
+.shows__value--focus {
   font-weight: 600;
 }
-
 .cta-button {
-  pointer-events: all;
   width: 100%;
 }

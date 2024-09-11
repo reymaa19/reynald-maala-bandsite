@@ -462,14 +462,30 @@ html {
   }
 }
 @media (min-width: 48rem) {
-  .photos__feed {
+  .photos__gallery {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
-    gap: 1.5rem;
     padding-bottom: 2.7rem;
     flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+}
+.photos__image {
+  transition: filter 0.3s ease-in-out;
+  padding-bottom: 0.5rem;
+  filter: grayscale(100%);
+  width: 100%;
+}
+.photos__image:hover {
+  filter: grayscale(0%);
+}
+@media (min-width: 48rem) {
+  .photos__image {
+    flex-grow: 1;
+    padding: 0;
+    width: 29%;
   }
 }
 .photos__image {
