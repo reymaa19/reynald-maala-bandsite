@@ -1,38 +1,17 @@
+import bandSiteApi from "./band-site-api.js";
 import { createElement, renderElements } from "./utils.js";
 
 const formNameInputEl = document.getElementById("name");
 const formCommentInputEl = document.getElementById("comment");
 const commentsFormEl = document.querySelector(".comments-form");
 const commentsFeedEl = document.querySelector(".comments__feed");
-const comments = [
-  {
-    name: "Victor Pinto",
-    timestamp: "09/08/2023, 12:34:56",
-    comment:
-      "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
-  {
-    name: "Christina Cabrera",
-    timestamp: "08/20/2024, 12:34:56",
-    comment:
-      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
-  {
-    name: "Isaac Tadesse",
-    timestamp: "09/08/2024, 16:34:56",
-    comment:
-      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-];
+const api = new bandSiteApi("b6a6f675-fae8-4ff5-b77f-5719b3869876");
 
-// Sorts the comments array from recent to oldest.
-const sortedComments = () => {
-  return comments.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
-};
+const comments = await api.getComments();
 
 // Formats the comments timestamp to a more human-readable format.
 const formatTimestamp = (timestamp) => {
-  const diffInSeconds = Math.floor((new Date() - new Date(timestamp)) / 1000);
+  const diffInSeconds = Math.floor(new Date() - new Date(timestamp)) / 1000;
   const secondsInMinute = 60;
   const secondsInHour = 3600;
   const secondsInDay = 86400;
@@ -50,7 +29,7 @@ const formatTimestamp = (timestamp) => {
     const days = Math.floor(diffInSeconds / secondsInDay);
     return `${days} day${days > 1 ? "s" : ""} ago`;
   } else {
-    return timestamp.split(",")[0];
+    return new Date(timestamp).toLocaleDateString("es-pa");
   }
 };
 
@@ -61,11 +40,7 @@ const createCommentsCard = ({ name, timestamp, comment }) => {
   const commentsDetails = createElement("div", "comments__details");
   const commentsHead = createElement("div", "comments__head");
   const commentsName = createElement("h4", "comments__name", name);
-  const commentsDate = createElement(
-    "time",
-    "comments__date",
-    formatTimestamp(timestamp)
-  );
+  const commentsDate = createElement("time", "comments__date", formatTimestamp(timestamp));
   const commentsText = createElement("p", "comments__text", comment);
 
   commentsHead.appendChild(commentsName);
@@ -78,67 +53,57 @@ const createCommentsCard = ({ name, timestamp, comment }) => {
   return commentsCard;
 };
 
-// Handles the submit event of the Comments Form.
-const handleCommentsFormSubmit = (e) => {
+// Renders a single comment to the top of the comments feed.
+const renderComment = (comment) => {
+  const newCommentsCard = createCommentsCard(comment);
+  commentsFeedEl.prepend(newCommentsCard);
+};
+
+// Checks whether the form inputs are valid.
+const validInputs = (name, comment) => {
+  let valid = true;
+
+  if (!name) {
+    formNameInputEl.classList.add("comments-form__input--error");
+    valid = false;
+  }
+  if (!comment) {
+    formCommentInputEl.classList.add("comments-form__input--error");
+    valid = false;
+  }
+
+  return valid;
+};
+
+// Handles the submit event of the form.
+const handleCommentsFormSubmit = async (e) => {
   e.preventDefault();
 
-  const error = {};
   const form = e.target;
   const name = form.name.value;
   const comment = form.comment.value;
 
+  if (!validInputs(name, comment)) { return; }
+
   try {
-    if (!name || !comment) {
-      error.input = {};
+    const result = await api.postComment({ name, comment });
 
-      if (!name) {
-        error.input.name = true;
-      }
-      if (!comment) {
-        error.input.comment = true;
-      }
-
-      throw error;
-    }
-
-    const timestamp = new Intl.DateTimeFormat("es-pa", {
-      year: "numeric",
-      month: "numeric",
-      day: "numeric",
-      hour: "numeric",
-      minute: "numeric",
-      second: "numeric",
-      hour12: false,
-      timeZone: "CST",
-    }).format(new Date());
-
-    comments.push({ name, timestamp, comment });
-    renderElements(sortedComments(), createCommentsCard, commentsFeedEl);
+    comments.unshift(result);
+    renderComment(result);
     form.reset();
   } catch (error) {
-    if (error.input) {
-      if (error.input.name) {
-        formNameInputEl.classList.add("comments-form__input--error");
-      }
-      if (error.input.comment) {
-        formCommentInputEl.classList.add("comments-form__input--error");
-      }
-    } else {
-      console.error("An error occurred while submitting your comment.", error);
-    }
+    console.log("An error occurred while submitting your comment.", error);
   }
 };
 
-// Handles the input event of the forms input fields.
-const handleInputChange = (e) => {
-  if (e.target.value) {
-    e.target.classList.remove("comments-form__input--error");
-  }
+// Removes the form input error.
+const resetErrors = (e) => {
+  e.target.classList.remove("comments-form__input--error");
 };
 
-formNameInputEl.addEventListener("input", handleInputChange);
-formCommentInputEl.addEventListener("input", handleInputChange);
+formNameInputEl.addEventListener("input", resetErrors);
+formCommentInputEl.addEventListener("input", resetErrors);
 
 commentsFormEl.addEventListener("submit", handleCommentsFormSubmit);
 
-renderElements(sortedComments(), createCommentsCard, commentsFeedEl);
+renderElements(comments, createCommentsCard, commentsFeedEl);
