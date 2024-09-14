@@ -8,7 +8,7 @@ const shows = await api.getShows();
 
 // Formats the date to a more human-readable format.
 const formatDate = (date) => {
-  const dateFormat = {
+  const format = {
     day: "2-digit",
     weekday: "short",
     month: "short",
@@ -16,7 +16,7 @@ const formatDate = (date) => {
     timeZone: "GMT",
   };
 
-  return new Intl.DateTimeFormat("en-US", dateFormat)
+  return new Intl.DateTimeFormat("en-US", format)
     .format(new Date(date))
     .replace(",", "")
     .replace(",", " ");

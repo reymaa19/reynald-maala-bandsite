@@ -117,15 +117,15 @@ html {
 }
 
 .cta-button {
+  @include reset-button;
   height: $cta-button-height;
   padding: 0 $cta-button-padding;
   background-color: $primary-color-black;
-  font-family: inherit;
   font-weight: $font-weight-demi;
   line-height: $mobile-lh-labels-and-buttons;
   color: $primary-color-white;
   border-radius: $form-radius;
-  border: none;
+  letter-spacing: 0.5px;
 
   @include tablet {
     width: $cta-button-width;

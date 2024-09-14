@@ -319,7 +319,7 @@
   &__card {
     @include flex-container;
     gap: $padding-sm;
-    padding: $padding-sm 0;
+    padding: $padding-sm 0 $padding-xs 0;
     @include divider;
   }
 
@@ -350,5 +350,35 @@
 
   &__date {
     color: $primary-color-gray;
+  }
+
+  &__buttons {
+    @include flex-container($justify: flex-start);
+    gap: 2rem;
+    margin-top: $padding-xs;
+    width: 100%;
+  }
+
+  &__button {
+    @include reset-button;
+    @include flex-container($justify: center);
+    padding: 0.25rem;
+    background-color: $secondary-color-white;
+    border: 2px solid $secondary-color-gray;
+    border-radius: $form-radius;
+
+    &:hover {
+      background-color: $secondary-color-gray;
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+    @include flex-container($justify: space-between, $align: center);
+  }
+
+  &__icon {
+    width: 1rem;
+    height: 1rem;
   }
 }

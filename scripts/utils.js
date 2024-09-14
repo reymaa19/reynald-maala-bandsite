@@ -19,5 +19,7 @@ export const createElement = (tagName, className, textContent) => {
 export const renderElements = (objArray, createComponent, parentEl) => {
   parentEl.replaceChildren();
 
-  objArray.forEach((obj) => parentEl.appendChild(createComponent(obj)));
+  objArray.forEach((obj) => {
+    parentEl.appendChild(createComponent(obj));
+  });
 };
