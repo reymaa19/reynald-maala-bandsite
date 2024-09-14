@@ -19,7 +19,7 @@ export default class bandSiteApi {
     }
   };
 
-  // Gets all the comments.
+  // Returns an array of comments.
   getComments = async () => {
     try {
       const response = await axios.get(
@@ -38,7 +38,7 @@ export default class bandSiteApi {
     }
   };
 
-  // Gets all the shows.
+  // Returns an array of showtime objects.
   getShows = async () => {
     try {
       const response = await axios.get(
@@ -51,7 +51,7 @@ export default class bandSiteApi {
     }
   };
 
-  // Adds one Like to the specified comment.
+  // Increments the like counter of the specified comment.
   likeComment = async (id) => {
     try {
       const response = await axios.put(

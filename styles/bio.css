@@ -627,7 +627,7 @@ html {
   justify-content: flex-start;
   align-items: stretch;
   gap: 1rem;
-  padding: 1rem 0 0.5rem 0;
+  padding: 1rem 0;
   border-bottom: 1px solid #e1e1e1;
 }
 .comments__avatar {
@@ -663,7 +663,7 @@ html {
   flex-direction: row;
   justify-content: flex-start;
   align-items: stretch;
-  gap: 2rem;
+  gap: 1.5rem;
   margin-top: 0.5rem;
   width: 100%;
 }
@@ -680,7 +680,7 @@ html {
   align-items: stretch;
   padding: 0.25rem;
   background-color: #fafafa;
-  border: 2px solid #e1e1e1;
+  border: 1px solid #e1e1e1;
   border-radius: 4px;
 }
 .comments__button:hover {
@@ -696,4 +696,7 @@ html {
 .comments__icon {
   width: 1rem;
   height: 1rem;
+}
+.comments__likes {
+  color: #afafaf;
 }
