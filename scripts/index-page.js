@@ -44,9 +44,9 @@ const createCommentButtons = (likes) => {
   const commentLikeButton = createElement("button", ["comments__button", "comments__button--like"]);
   const commentLikeIcon = createElement("img", "comments__icon");
 
-  commentDeleteIcon.setAttribute("src", "../assets/icons/icon-delete.svg");
+  commentDeleteIcon.setAttribute("src", "assets/icons/icon-delete.svg");
   commentDeleteIcon.setAttribute("alt", "Delete Icon");
-  commentLikeIcon.setAttribute("src", "../assets/icons/icon-like.svg");
+  commentLikeIcon.setAttribute("src", "assets/icons/icon-like.svg");
   commentLikeIcon.setAttribute("alt", "Like Icon");
 
   commentDeleteButton.addEventListener("click", handleDeleteClick);
